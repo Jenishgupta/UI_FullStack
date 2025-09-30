@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        header{
+            padding: 10px;
+            font-size: 30px;
+            text-align: center;
+            background-color: rgba(79, 74, 74, 0.765);
+            color: white;
+        }
+        section{
+            display: grid;
+            grid-template-columns: 2fr 10fr;
+        }
+        .nav-item{
+            width: 100px;
+            background-color: rgba(132, 154, 153, 0.826);
+            color: white;
+            padding: 5px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        main{
+            height: 580px;
+            overflow: auto;
+            margin-top: 20px;
+        }
+        nav a{
+            color: white;
+            font-size: 20px;
+            font-family: arial;
+            text-decoration: none;
+        }
+        nav a:hover{
+            text-decoration: underline 2px white;
+        }
+        header a{
+            text-decoration: none;
+
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .top-nav{
+            margin-top: 20px;
+        }
+
+        footer {
+            padding: 20px;
+            background-color: rgb(33, 33, 33);
+            color:white;
+            font-size: 12px;
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            height: 320px;
+            
+        }
+        .left-panel {
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr 3fr;
+        }
+        .right-panel {
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            border-left: 1px solid #454D5E;
+            padding-left: 40px;
+        }
+        
+        .service-title{
+            font-size: bold;
+            display: block;
+            font-size: 15px;
+            padding-bottom: 20px;
+            color: #878787;
+        }
+        .service-title~span {
+            display: block;
+            padding-bottom: 10px;
+            font-size: 15px;
+        }
+        address span {
+            display: block;
+            padding: 10px;
+        }
+        footer aside span {
+            font-size: 20px;
+            padding-right: 10px;
+        }
+        .footer-2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(33, 33, 33);
+            color:white;
+            height: 50px;
+            
+        }
+        .bi-shop, .bi-stars, .bi-gift-fill, .bi-question {
+            color: yellow;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <header>
+        <span>Shopping</span>
+        <div class="top-nav">
+            <a href="#Mens"><img src="./public/images/men-fashion.jpg" width="50" height="50"></a>
+            <a href="#Womens"><img src="./public/images/women-fashion.jpg" width="50" height="50"></a>
+            <a href="#Kids"><img src="./public/images/kids-fashion.jpg" width="50" height="50"></a>
+        </div>
+    </header>
+    <section>
+        <nav>
+            <div class="nav-item"><a href="#home">Home</a></div>
+            <div class="nav-item"><a href="#Mens">Mens</a></div>
+            <div class="nav-item"><a href="#Womens">Womens</a></div>
+            <div class="nav-item"><a href="#Kids">Kids</a></div>
+        </nav>
+        <main>
+            <h2 id="home">Home</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia aperiam consequuntur natussicing elit. Cumque ipsum aperiam accusamus vero. Porro cumque quae libero voluptatibus maxime iure expedita. Obcaecati exercitationem amet, adipisci itaque dicta alias asperiores sapiente. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequuntur quibusdam exercitationem laborum, iusto ipsum id itaque nulla eligendi autem molestiae cumque et. Tempore voluptatum sequi quae sunt accusamus r veritatis, tenetur quos vel, consequuntur totam recusandae officia consequatur ipsum ab. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae in enim, error minima quos laborum pariatur voluptatem repellat libero? Asperiores officiis deserunt accusantium tempora corrupti. Quaerat ad labore repudiandae recusandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia assumenda fugiat veritatis, maxime ut fuga illum provident dolore perspiciatis, nihil repudiandae minima. Quia qui quibusdam pariatur quo cum, animi voluptatibus. em consequuntur dicta placeat vitae omnis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor suscipit, voluptatibus amet nihil veritatis voluptatum rem quis architecto reiciendis. Ut minima eaque illo saepe tempora necessitatibus ipsum laborum pariatur quod! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis incidunt mollitia minima iste, aliquam magni delectus rerum perferendis nihil quia commodi nulla eius! Voluptatibus harum consequuntur aliquam id maiores accusamus.</p>
+            
+
+            <h2 id="Mens">Mens</h2>
+            <img src="./public/images/men-fashion.jpg" width="200" height="200">
+            <div>
+                <a href="#home">Back to home</a>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. praesentium suscipit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quam doloribus quis magnam nihil molestias minus quae sint ex repudiandae! Atque, ratione. Nobis assumenda saepe placeat numquam corporis dolor laborum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ipsum aperiam accusamus vero. Porro cumque quae libero voluptatibus maxime iure expedita. Obcaecati exercitationem amet, adipisci itaque dicta alias asperiores sapiente. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequuntur quibusdam exercitationem laborum, iusto ipsum id itaque nulla eligendi autem molestiae cumque et. Tempore voluptatum sequi quae sunt accusamus nihil? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem sit perferendis maxime erspiciatis, nihil repudiandae minima. Quia qui quibusdam pariatur quo cum, animi voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, illo incidunt quia ex, excepturi quisquam aut facere, sequi cum ea neque sunt quibusdam debitis quidem consequuntur dicta placeat vitae omnis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor suscipit, voluptatibus amet nihil veritatis voluptatum rem quis architecto reiciendis. Ut minima eaque illo saepe tempora necessitatibus ipsum laborum pariatur quod! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis incidunt mollitia minima iste, aliquam magni delectus rerum perferendis nihil quia commodi nulla eius! Voluptatibus harum consequuntur aliquam id maiores accusamus.</p>
+            
+            <h2 id="Womens">Womens</h2>
+            <img src="./public/images/women-fashion.jpg" width="200" height="200">
+            <div>
+                <a href="#home">Back to home</a>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ad consectetur earum quaerat natus aspernatur magni quasi porro incidunt recusandae corrupti modi provident, beatae, similique debitis, magnam necessitatibus praesentium suscipit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quam doloribus quis magnam nihil molestias minus quae sint ex repudiandae! Atque, ratione. Nobis assumenda saepe placeat numquam corporis dolor laborum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ipsum aperiam accusamus vero. Porro cumque quae libero voluptatibus maxime iure expedita. Obcaecati exercitationem amet, adipisci itaque dicta alias asperiores sapiente. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequuntuamet consectetur adipisicing elit. Mollitia assumenda fugiat veritatis, maxime ut fuga illum provident dolore perspiciatis, nihil repudiandae minima. Quia qui quibusdam pariatur quo cum, animi voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, illo incidunt quia ex, excepturi quisquam aut facere, sequi cum ea neque sunt quibusdam debitis quidem consequuntur dicta placeat vitae omnis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor suscipit, voluptatibus amet nihil veritatis voluptatum rem quis architecto reiciendis. Ut minima eaque illo saepe tempora necessitatibus ipsum laborum pariatur quod! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis incidunt mollitia minima iste, aliquam magni delectus rerum perferendis nihil quia commodi nulla eius! Voluptatibus harum consequuntur aliquam id maiores accusamus.</p>
+            
+            
+            <h2 id="Kids">Kids</h2>
+            <img src="./public/images/kids-fashion.jpg" width="200" height="200">
+            <div>
+                <a href="#home">Back to home</a>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. praesentium suscipit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quam doloribus quis magnam nihil molestias minus quae sint ex repudiandae! Atque, ratione. Nobis assumenda saepe placeat numquam corporis dolor laborum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ipsum aperiam accusamus vero. Porro cumque quae libero voluptatibus maxime iure expedita. Obcaecati exercitationem amet, adipisci itaque dicta alias asperiores sapiente. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequuntur quibusdam exercitationem laborum, iusto ipsum id itaque nulla eligendi autem molestiae cumque et. Tempore voluptatum sequi quae sunt accusamus nihil? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem sit perferendis maxime debitis rem cupiditate et, deserunt officiis expedita adipisci beatae reiciendis mollitia exercitationem nobis, repellendus eligendi facilis a ipsum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum quidem rem incidunt, temporibus, accusamus quisquam inventore mollitia dicta, odio laboriosam repudiandae nesciunt quae blanditiis sunt a iusto. Ullam, dolor eaque. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi tempore cupiditate temporibus repellat qandae recusandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia assumenda fugiat veritatis, maxime ut fuga illum provident dolore perspiciatis, nihil repudiandae minima. Quia qui quibusdam pariatur quo cum, animi voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, illo incidunt quia ex, excepturi quisquam aut facere, sequi cum ea neque sunt quibusdam debitis quidem consequuntur dicta placeat vitae omnis? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor suscipit, voluptatibus amet nihil veritatis voluptatum rem quis architecto reiciendis. Ut minima eaque illo saepe tempora necessitatibus ipsum laborum pariatur quod!</p>
+        </main>
+    </section>
+
+    <footer>
+        <div class="left-panel">
+            <div>
+                <span class="service-title">ABOUT</span>
+                <span>Contact Us</span>
+                <span>About Us</span>
+                <span>Careers</span>
+                <span>Flipkart Stories</span>
+                <span>Press</span>
+                <span>Corporate Information</span>
+            </div>
+            <div>
+                <span class="service-title">GROUP COMPANIES</span>
+                <span>Myntra</span>
+                <span>Cleartrip</span>
+                <span>Shopsy</span>
+            </div>
+            <div>
+                <span class="service-title">HELP</span>
+                <span>Payments</span>
+                <span>Shipping</span>
+                <span>Cancellation & Returns</span>
+                <span>FAQ</span>
+            </div>
+
+            <div>
+                <span class="service-title">CONSUMER POLICY</span>
+                <span>Cancellation & Returns</span>
+                <span>Terms Of Use</span>
+                <span>Security</span>
+                <span>Privacy</span>
+                <span>Sitemap</span>
+                <span>Grievance Redressal</span>
+                <span>EPR Compliance</span>
+                
+            </div>
+
+        </div>
+
+        <div class="right-panel">
+            <div>
+                <span class="service-title">Mail Us:</span>
+                <address>
+                    <span> Internet Private Limited,</span>
+                    <span>Buildings Alyssa, Begonia &</span>
+                    <span>Clove Embassy Tech Village,</span>
+                    <span>Outer Ring Road, Devarabeesanahalli Village,</span>
+                    <span>Bengaluru, 560103,</span>
+                    <span>Karnataka, India</span>
+                </address>
+                <br>
+                <div class="service-title">SOCIAL:</div>
+                <aside>
+                    <span class="bi bi-facebook"></span>
+                    <span class="bi bi-twitter"></span>
+                    <span class="bi bi-youtube"></span>
+                    <span class="bi bi-instagram"></span>
+                </aside>
+            </div>    
+        
+            <div>
+                <span class="service-title">Registered Office Address:</span>
+                <span>Flipkart Internet Private Limited,</span>
+                <span>Buildings Alyssa, Begonia &</span>
+                <span>Clove Embassy Tech Village,</span>
+                <span>Outer Ring Road, Devarabeesanahalli Village,</span>
+                <span>Bengaluru, 560103,</span>
+                <span>Karnataka, India</span>
+                <span>CIN : U51109KA2012PTC066107</span>
+                <span>Telephone: 044-45614700 / 044-67415800</span>
+            </div>
+        </div>
+
+    </footer>
+    <hr color="#454D5E" width="100%">
+    <footer class="footer-2">
+        <div>
+            <span class="bi bi-shop"></span>
+            <span>Become a Seller</span>
+        </div>
+        <div>
+            <span class="bi bi-stars"></span>
+            <span>Advertise</span>
+        </div>
+        <div>
+            <span class="bi bi-gift-fill"></span>
+            <span>Gift Cards</span>
+        </div>
+        <div>
+            <span class="bi bi-question"></span>
+            <span>Help Center</span>
+        </div>
+        <div>
+            <span>© 2007-2025 Flipkart.com</span>
+        </div>
+        <div>
+            <img src="./public/images/payment.png" alt="pay">
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leetcode</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            font-size: 20px;  
+            background-color: rgb(0, 0, 0);
+            color: beige;
+        }
+        .bi-bug {
+            background-color: #5f5e558a;
+            padding: 5px;
+            width: 20px;
+            border-radius: 5px;
+        }
+        .bi-play-fill {
+            background-color: #5f5e558a;
+            padding: 5px;
+            width: 20px;
+            border-radius: 5px;
+        }
+        .bi-sticky {
+            background-color: #5f5e558a;
+            padding: 5px;
+            width: 20px;
+            border-radius: 5px;
+        }
+        .bi-cloud-arrow-down-fill {
+            background-color: #5f5e558a;
+            padding: 10px;
+            width: 50px;
+            border-radius: 5px;
+            color: green;
+        }
+        .box-p {
+            background-color: rgba(190, 183, 82, 0.542);
+            padding: 10px;
+            border-radius: 5px;
+            color: yellow;
+        }
+        .bi-stopwatch {
+            background-color: #5f5e558a;
+            padding: 5px;
+            width: 20px;
+            border-radius: 5px;
+            color: blue;
+        }
+        .bi-code-slash {
+            color: yellow;
+        }
+        .bi-javascript {
+            color: rgb(206, 74, 22);
+            background-color: aliceblue;
+        }
+
+        
+        section{
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            padding: 20px;
+            height: 570px;
+        }
+       
+        .row-1{
+            padding: 5px;
+            font-family: Arial;
+            background-color:whitesmoke;
+            border-radius: 20px;
+            margin-left: -13px;
+            margin-right: 15px;
+            margin-top: -10px;
+        }
+        .head{
+            padding: 14px;
+            margin: -4px;
+            border-radius:10px ;
+            background-color: rgb(187, 184, 184);
+           
+        }
+        .body{
+            padding:15px;
+            overflow: auto;
+            background-color:whitesmoke;
+            height: 500px;
+        }
+        .bi-file-text{
+            color: blue;
+            font-size: 15px;
+        }
+        .description{
+            color: black;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .bi-journals{
+            color: orange;
+            font-size: 15px;
+        }
+        .li{
+            color: gray;
+            font-size: 15px;
+        }
+        .bi-beaker,.bi-clock-history{
+            color: blue;
+            font-size: 15px;
+        }
+        .easy{
+            color: rgb(6, 115, 70);
+            padding: 7px;
+            border-radius: 12px;
+            background-color: rgb(232, 228, 228);
+            font-size: 13px;
+        }
+        .bi-lock{
+            color: rgb(255, 183, 0);
+            padding: 10px;
+            border-radius: 20px;
+            background-color: rgb(232, 228, 228);
+            font-size: 10px;
+        }
+        samp{
+            color: gray;
+            padding:3px;
+            border-radius: 12px;
+            background-color: rgb(232, 228, 228);
+            font-size: 15px;
+        }
+        p{
+            font-size: 15px;
+            margin-left: 20px ;
+            color: gray;
+           
+        }
+        pre{
+            margin-left: -210px;
+            font-size: 18px;
+        }
+        pre span{
+            color: gray;
+        }
+        ul li{
+            background-color: rgb(234, 223, 223);
+            padding: 10px;
+            border-radius: 10px;
+            margin-right:460px ;
+        }
+        ul li span{
+            color: gray;
+        }
+        .reviews{
+            padding: 20px;
+            margin-top: 50px;
+            margin-left: -25px;
+        }
+        .reviews span{
+            padding: 8px;
+        }
+        .row-2{
+            height: 600px;
+        }
+        .row2{
+            background-color:whitesmoke ;
+            border-radius: 15px;
+            margin-left: 15px ;
+            margin-top: -10px;
+            height: 560px;
+        }
+        .col1{
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            background-color: gainsboro;
+            border-radius: 10px;
+            border-bottom: 0px;
+            font-family: Arial;
+            font-size: 15px;
+        }
+        .col2{
+            padding: 10px;
+            display:flex;
+            justify-content: space-between;
+            background-color: aliceblue;
+            font-family: Arial;
+            font-size: 15px;
+        }
+        .bi-code-slash{
+            color: green;
+           
+        }
+        .col1 span,.col2 span{
+            padding: 6px;
+        }
+        .col2-g{
+            color: gray;
+        }
+        .col3{
+            height: 360px;
+            padding: 20px;
+            overflow: auto;
+        }
+        .col4{
+            padding: 20px;
+            align-content: left;
+            color: rgb(186, 181, 181);
+        }
+        .col5{
+            background-color: rgb(160, 238, 245);
+            padding: 10px;
+        }
+        .col5 .login{
+            color: blue;
+        }
+        .bi-check-square,.bi-chevron-right{
+            color: green;
+        }
+        .col6{
+            margin-top: 20px;
+            height: 30px;
+            padding: 10px;
+            margin-left: 15px;
+            background-color: rgb(222, 216, 216);
+            padding-left: 10px;
+            border-radius: 10px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <span class="bi bi-code-slash"> </span>
+            <span>|</span>
+            <span class="bi bi-javascript"> </span>
+            <span>30 Days of JavaScript</span>
+            <span class="bi bi-chevron-left"></span>
+            <span class="bi bi-chevron-right"></span>
+            <span class="bi bi-shuffle"></span>
+        </div>
+
+        <div>
+            <span class="bi bi-bug"></span>
+            <span class="bi bi-play-fill"></span>
+            <span class="bi bi-cloud-arrow-down-fill">
+                <span>Submit</span>
+            <span class="bi bi-sticky"></span>
+        </div>
+
+        <div>
+            <span class="bi bi-columns-gap"></span>
+            <span class="bi bi-gear"></span>
+            <span class="bi bi-stopwatch"></span>
+                <span>Register</span>
+                <span>or</span>
+                <span>Login</span>
+                <span class="box-p">Premium</span>
+        <div>
+
+    </header>
+
+    <section>
+        <div class="row-1">
+            <div class="head">
+                <span class="bi bi-file-text"></span>
+                <span class="description">Description</span>
+                <span class="ss">|</span>
+                <span class="bi bi-journals"></span>
+                <span class="li">Editorial</span>
+                <span class="ss">|</span>
+                <span class="bi bi-beaker"></span>
+                <span class="li">Solution</span>
+                <span class="ss">|</span>
+                <span class="bi bi-clock-history"></span>
+                <span class="li">Submition</span>
+            </div>
+            <div class="body" >
+                <div><h1>2667. Create Hello World Function</h1></div>
+                <div>
+                    <span class="easy">Easy</span>
+                    <span class="bi bi-lock"> Companies</span>
+                </div>
+                <div>
+                    <p>Write a function <samp><small>createHelloWorld</small></samp>. It should return a new function that always returns <samp>"Hello World"</samp>.</p>
+                </div>
+                <div>
+                    <h4>Example 1:</h4>
+                    <pre>
+                        <b>Input:</b> <span>args = []</span>
+                        <b>Output:</b> <span>"Hello World"</span>
+                        <b>Explanation:</b>
+                        <span>const f = createHelloWorld();</span>
+                        <span>f(); // "Hello World"</span>
+                    </pre>
+                    <p class="content">The function returned by createHelloWorld should always return "Hello World".</p>
+                </div>
+                <div>
+                    <h4>Example 2:</h4>
+                    <pre>
+                        <b>Input:</b> <span>args = [{},null,42]</span>
+                        <b>Output:</b> <span>"Hello World"</span>
+                        <b>Explanation:</b>
+                        <span>const f = createHelloWorld();</span>
+                        <span>f({}, null, 42); // "Hello World"</span>
+                    </pre>
+                    <p class="content">Any arguments could be passed to the function but it should still always return "Hello World".</p>
+                </div>
+                <div>
+                    <h4>Constraints:</h4>
+                    <ul>
+                        <li><span>0 <= args.length <= 10</span></li>
+                    </ul>
+                </div>
+                <div class="reviews">
+                    <span>Accepted <b>743,324</b>/906.2K</span>
+                    <span class="ss">|</span>
+                    <span>Acceptance Rate<b>82.0</b>%</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="row-2">
+            <div class="row2">
+                <div class="col1">
+                    <div >
+                        <span class="bi bi-code-slash"></span>
+                        <span>Code</span>
+                    </div>
+                    <div>
+                        <span class="bi bi-arrows-fullscreen"></span>
+                        <span class="bi bi-chevron-up"></span>
+                    </div>
+                </div>
+                <div class="col2">
+                    <div>
+                        <span class="col2-g">Javascript <span class="bi bi-chevron-down"></span></span>
+                        <span class="bi bi-dot"></span>
+                        <span class="col2-g">Auto</span>
+                       
+                    </div>
+                    <div>
+                        <span class="bi bi-bookmark"></span>
+                        <span class="bi bi-braces"></span>
+                        <span class="bi bi-arrow-counterclockwise"></span>
+                        <span class="bi bi-arrows-angle-expand"></span>
+                    </div>
+                </div>
+                <div class="col3">
+                    <ol>
+                        <li> /**</li>
+                        <li> * @return {Function}</li>
+                        <li> */</li>
+                        <li>var createHelloWorld = function() {</li>
+                        <li></li>
+                        <li>  return function(...args) { </li>
+                        <li></li>
+                        <li> } </li>
+                        <li> };</li>
+                        <li></li>
+                        <li>/**</li>
+                        <li> * const f = createHelloWorld();</li>
+                        <li> * f(); // "Hello World"</li>
+                        <li> */</li>
+                    </ol>
+                </div>
+                <div class="col4">
+                    <span>Saved</span>
+                </div>
+                <div class="col5">
+                    <span>You need to <span class="login">log in / sign</span> up to run or submit</span>
+                </div>
+            </div>
+            <div class="col6">
+                <span class="bi bi-check-square"></span>
+                <span>Testcase</span>
+                <span class="ss">|</span>
+                <span class="bi bi-chevron-right">_</span>
+                <span>Test Results</span>
+            </div>
+        </div>
+
+    </section>
+        
+</body>
+</html>

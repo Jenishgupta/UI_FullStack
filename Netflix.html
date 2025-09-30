@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-size: cover;
+        }
+        .shade {
+            background-color: rgba(0,0,0,0.5);
+            height: 1000px;
+            margin-top: -20px;
+            margin-left: -10px;
+        }
+        header {
+            color:white;
+            padding: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .brand-title {
+            color:red;
+            font-size: 50px;
+            font-weight: bold;
+            font-family: Arial;
+        }
+        .lang{
+            border:1px solid white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .btn-signin {
+            background-color: red;
+            padding: 10px;
+            margin-left: 20px;
+            font-size: 16px;
+            font-family: Arial;
+            border-radius: 5px;
+        }
+        section {
+            color:white;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .section-title {
+            font-family: Arial;
+            font-size: 60px;
+            font-weight: bold;
+        }
+        .section-subtitle{
+            font-family: Arial;
+            font-size: 30px;
+            padding-top: 20px;
+        }
+        .section-subtitle-2 {
+            font-family: Arial;
+            font-size: 18px;
+            padding-top: 20px;
+
+        }
+        main {
+            margin-top: 10px;
+        }
+        .email {
+            padding: 20px;
+            border:1px solid white;
+            width: 400px;
+            display: inline-block;
+            font-size: 20px;
+            text-align: left;
+            background-color: rgba(0,0,0,0.5);
+            margin-right: 20px;
+            font-family: Arial;
+        }
+        .btn-start {
+            padding: 20px;
+            background-color: red;
+            font-family: Arial;
+            font-size: 20px;
+        }
+        footer{
+            height: 500px;
+            background-color: black;
+            color: white;
+        }
+        .footer-row-1{
+            padding: 30px;
+            text-align: center;
+            align-items: center;
+        }
+        .footer-bar{
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+            padding-bottom: 20px;
+        }
+        .footer-row-2{
+            font-size: 15px;
+            font-family: Arial;
+            text-decoration: 1px double gray;
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr 3fr;
+            justify-content: space-between;
+            padding: 60px;
+        }
+        .first span{
+            display: block;
+            padding-bottom: 10px;
+        }
+        .second span{
+            display: block;
+            padding-bottom: 10px;
+        }
+        .third span{
+            display: block;
+            padding-bottom: 10px;
+        }
+        .fourth span{
+            display: block;
+            padding-bottom: 10px;
+        }
+        .footer-row-3{
+            padding: 20px;
+            text-align: left;
+            align-items: center;
+            display:flex;
+            justify-content: space-around;
+            border: 1px solid gray;
+            width: 100px;
+        }
+
+    </style>
+
+</head>
+
+<body background="./public/images/netflix-banner.jpg">
+    <div class="shade">
+        <header>
+            <div>
+                <span class="brand-title">NETFLIX</span>
+            </div>
+            <div>
+                <span class="lang"> <span class="bi bi-translate"></span> Language <span class="bi bi-chevron-down"></span> </span>
+                <span class="btn-signin"> Signin </span>
+            </div>
+        </header>
+        <section>
+            <div class="section-title">Unlimited movies, TV<br> shows and more</div>
+            <div class="section-subtitle">Starts at ₹149. Cancel at any time.</div>
+            <div class="section-subtitle-2">Ready to watch? Enter your email to create or restart your membership.</div>
+            <main>
+                <div>
+                <span class="email">Your Email</span>
+                <span class="btn-start"> Get Started <span class="bi bi-chevron-right"></span> </span>
+                </div>
+            </main>
+        </section>
+        <br><br><br><br><br><br><br><br>
+        <footer>
+            <div class="footer-row-1">
+            <div class="footer-bar">Ready to watch? Enter your email to create or restart your membership.</div>
+            <div>
+                <span class="email">Email address</span>
+                <span class="btn-start">Get Started</span>
+            </div>
+            <div class="footer-row-2">
+                <div class="first">
+                    <span>FAQ</span>
+                    <span>Investor Relations</span>
+                    <span>Privacy</span>
+                    <span>Speed Test</span>
+                </div>
+                <div class="second">
+                    <span>Help Centre</span>
+                    <span>Jobs</span>
+                    <span>Cookie Preferences</span>
+                    <span>Legal Notices</span>
+                </div>
+                <div class="third">
+                    <span>Account</span>
+                    <span>Ways to Watch</span>
+                    <span>Corporate Information</span>
+                    <span>Only on Netflix</span>
+                </div>
+                <div class="fourth">
+                    <span>Media Centre</span>
+                    <span>Terms of Use</span>
+                    <span>Contact Us</span>
+                </div>
+            </div>
+            <div class="footer-row-3">
+
+                <span class="bi bi-translate">English<span class="bi bi-caret-down-fill"></span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
