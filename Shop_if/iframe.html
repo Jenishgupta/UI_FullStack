@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        .header{
+            border: 1px solid black;
+            font-size: 20px;
+            text-align: center;
+            font-weight:600 ;
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+        main{
+            display: grid;
+            grid-template-columns: 2fr 10fr;
+            padding-top: 10px;
+        }
+        .nav-item{
+            width: 100px;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            margin: 10px;
+            background-color: rgba(88, 89, 131, 0.856);
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        iframe{
+            border: none;
+            width: 100%; ;
+            height:620px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="header"> Shopping</div>
+    </header>
+    <main>
+        <div class="nav-bar">
+            <div class="nav-item" >
+                <a href="./home.html"  target="same">HOME</a>
+            </div>
+            <div class="nav-item">
+                <a href="./mobile.html" target="same">MOBILE</a>
+            </div>
+            <div class="nav-item">
+                <a href="./tablet.html" target="same">TABLET</a>
+            </div>
+            <div class="nav-item">
+                <a href="./laptop.html" target="same">LAPTOP</a>
+            </div>
+        </div>
+        <div class="main">
+            <iframe name="same"  src="./home.html" ></iframe>
+        </div>
+    </main>
+</body>
+</html>
