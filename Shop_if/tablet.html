@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 15px;
+            background-color: rgb(126, 121, 121);
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 20px;
+            color: aliceblue;
+        }
+        .products {
+            display: inline-block;
+            margin: 30px;
+            vertical-align: top;
+            
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .card img {
+            width: 100;
+            height: 188px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card h3 {
+            margin: 10px 0 5px;
+            font-size: 18px;
+            color: #333;
+        }
+        .price {
+            color: #0288D1;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card button {
+            background: #4FC3F7;
+            border: none;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .card button:hover {
+            background: #0288D1;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>Tablets</h2>
+
+    <div class="products">
+        <div class="card">
+            <img src="./images/ipadpro.jpg" alt="Apple iPad Pro 13">
+            <h3>Apple iPad Pro 13″ (M4): Ultra Retina XDR Display, 256GB, Landscape 12MP Front Camera</h3>
+            <p>₹1,29,900</p>
+            <button>Add to cart</button>
+        </div>
+    </div>
+
+    <div class="products">
+        <div class="card">
+            <img src="./images/Redmi Pad Pro.jpg" alt="Redmi Pad Pro5">
+            <h3>Redmi Pad Pro| Snapdragon 7s Gen 2| 30.7cm(12.1) Tablet| 33+ Days Standby|10000mAh| HyperOS|</h3>
+            <p>₹20,999</p>
+            <button>Add to cart</button>
+        </div>
+    </div>
+
+    <div class="products">
+        <div class="card">
+            <img src="./images/XIAOMI Pad 7.jpg" alt="XIAOMI Pad 7">
+            <h3>XIAOMI Pad 7 Nano Texture Display [Smartchoice] | Snapdragon 7+ Gen 3| 3.2K Display (28.44 cm /11.2")</h3>
+            <p>₹32,999</p>
+            <button>Add to cart</button>
+        </div>
+    </div>
+</body>
+</html>

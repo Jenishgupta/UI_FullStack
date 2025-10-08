@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        table {
+            width: 100%;
+            font-family: Arial;
+        }
+        .flag {
+            width: 24px;
+        }
+        .player-image {
+            width: 200px;
+        }
+        .player-profile {
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+        }
+        .player-first-name {
+            font-size: 18px;
+        }
+        .player-last-name {
+            display: block;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .player-name {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .row-1-team {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .row-1-rating {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .row-1-best {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .bi-dot {
+            font-size: 30px;
+            color: gray;
+        }
+        .numbering {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .numbering-1 {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .country {
+            font-size: 20px;
+        }
+        caption {
+            font-size: 22px;
+            padding-bottom: 20px;
+            font-weight: bold;
+        }
+        td {
+            background-size: cover;
+            background-size: 150px;
+            background-repeat: no-repeat;
+            background-position: top right;
+        }
+        .btn-more {
+            border:1px solid gray;
+            padding: 10px;
+            width: 130px;
+            background-color: black;
+            color:white;
+            text-align: center;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" frame="void" cellspacing="10" cellpadding="20">
+        <caption>ICC T20 Batting Rankings</caption>
+        <colgroup span="4"></colgroup>
+        <thead>
+            <tr>
+                <th>Pos</th>
+                <th>Team</th>
+                <th>Players</th>
+                <th>Rating</th>
+                <th>Carrer Best Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="numbering-1">01</span><span class="bi bi-dot"></span></td>
+                <td><img src="./public/images/india.jpg" alt="india" class="flag"><span class="row-1-team">IND</span></td>
+                <td background="./images/icc.avif">
+                    <div class="player-profile">
+                        <div class="player-name">
+                            <div>
+                                <span class="player-first-name">Abhishek</span>
+                                <span class="player-last-name">SHARMA</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="./public/images/abhisheksharma.png" alt="abhishek" class="player-image">
+                        </div>
+                    </div>
+                </td>
+                <td><span class="row-1-rating">829</span></td>
+                <td align="right" valign="center"><span class="row-1-best">829 v England at Mumbai 2025</span></td>
+            </tr>
+            <tr>
+                <td><span class="numbering">02</span><span class="bi bi-dot"></span></td>
+                <td><img class="flag" src="./public/images/india.jpg" alt="india"><span class="country">INDIA</span></td>
+                <td>
+                    <span>Tilak</span>
+                    <span>VARMA</span>
+                </td>
+                <td>804</td>
+                <td align="right">845 v England at Chennai 2025</td>
+            </tr>
+            <tr>
+                <td><span class="numbering">03</span><span class="bi bi-dot"></span></td>
+                <td><img class="flag" src="./public/images/england.jpg" alt="england"><span class="country">ENGLAND</span></td>
+                <td>
+                    <span>Phil</span>
+                    <span>SALT</span>
+                </td>
+                <td>791</td>
+                <td align="right">881 v West Indies at Barbados 2024</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" align="center">
+                    <div class="btn-more"> More rankings <span class="bi bi-chevron-right"></span> </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

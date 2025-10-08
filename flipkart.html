@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <title>Document</title>
+
+    <style>
+        header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #FFFFFF;
+            padding: 10px;
+            font-size: 20px;
+        }
+        .bi-search {
+            background-color: #F0F5FF;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100px;
+            margin-right: 20px;
+            
+        }
+        .brand-title {
+            font-size: 30px;
+            color: #2A55E5;
+        }
+        .explore {
+            font-size: 15px;
+            color: #9E9E9E;
+        }
+        .plus {
+            font-size: 20px;
+            color: rgb(243, 243, 7);
+        }
+
+        /* main Section css */
+        article {
+
+            text-align: center;
+
+            background-color: black;
+
+            color:white;
+
+            padding: 10px;
+
+            font-size: 20px;
+
+            font-family: Arial;
+            
+
+        }
+
+        .bi-lightning-fill {
+
+            color:gold;
+
+        }
+
+        section {
+
+            padding: 20px;
+
+        }
+
+        main {
+
+            margin-top: 10px;
+
+            height: 700px;
+
+            display: grid;
+
+            grid-template-columns: 4fr 4fr 4fr;
+
+        }
+
+        .women-fashion{
+
+            background-image: url("./public/images/women-fashion.jpg");
+
+            background-size: cover;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-around;
+
+            align-items: center;
+
+            opacity: 0.6;
+
+        }
+
+        .men-fashion{
+
+            background-image: url("./public/images/men-fashion.jpg");
+
+            background-size: cover;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-around;
+
+            align-items: center;
+
+            opacity: 0.6;
+
+        }
+
+        .kids-fashion{
+
+            background-image: url("./public/images/kids-fashion.jpg");
+
+            background-size: cover;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-around;
+
+            align-items: center;
+
+             opacity: 0.6;
+
+        }
+
+        .main-title {
+
+            color:white;
+
+            font-size: 50px;
+
+            font-weight: bold;
+
+            font-family: Arial;
+
+            text-shadow: 2px 2px 1px black;
+
+        }
+
+        .btn-shop {
+
+            width: 120px;
+
+            background-color: white;
+
+            text-align: center;
+
+            padding: 15px;
+
+            font-family: Arial;
+
+            font-size: 16px;
+
+        }
+
+        .women-fashion:hover{
+
+            opacity: 1;
+
+        }
+
+        .men-fashion:hover {
+
+            opacity: 1;
+
+        }
+
+        .kids-fashion:hover {
+
+            opacity: 1;
+
+        }
+
+
+        /* footer Section css */
+        footer {
+            padding: 20px;
+            background-color: rgb(33, 33, 33);
+            color:white;
+            font-size: 12px;
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            height: 320px;
+            
+        }
+        .left-panel {
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr 3fr;
+        }
+        .right-panel {
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            border-left: 1px solid #454D5E;
+            padding-left: 40px;
+        }
+        
+        .service-title{
+            font-size: bold;
+            display: block;
+            font-size: 15px;
+            padding-bottom: 20px;
+            color: #878787;
+        }
+        .service-title~span {
+            display: block;
+            padding-bottom: 10px;
+            font-size: 15px;
+        }
+        address span {
+            display: block;
+            padding: 10px;
+        }
+        footer aside span {
+            font-size: 20px;
+            padding-right: 10px;
+        }
+        .footer-2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(33, 33, 33);
+            color:white;
+            height: 50px;
+            
+        }
+        .bi-shop, .bi-stars, .bi-gift-fill, .bi-question {
+            color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <span class="brand-title">Flipkart</span>
+            <div>
+                <span class="explore">Explore </span>
+                <span class="plus">Plus+</span>
+            </div>
+        </div>
+        <div>
+            <span class="bi bi-search">Seach for Products, Brands and More_________________</span>
+        </div>
+        <div>
+            <span class="bi bi-person-circle"></span>
+            <span>Login</span>
+            <span class="bi bi-chevron-down"></span>
+        </div>
+        <div>
+            <span class="bi bi-cart"></span>
+            <span>Cart</span>
+        </div>
+        <div>
+            <span class="bi bi-shop-window"></span>
+            <span>Become a Seller</span>
+        </div>
+        <div>
+            <span class="bi bi-three-dots-vertical"></span>
+        </div>
+
+    </header>
+
+
+    <!-- main section -->
+    <section>
+        <article>
+            <span class="bi bi-lightning-fill"></span>
+            <span> HAPPY HOLIDAY DEALS ON EVERYTHING </span>
+            <span class="bi bi-lightning-fill"></span>
+        </article>
+        <main>
+            <div class="women-fashion">
+                <div class="main-title">Women</div>
+                <div class="btn-shop">
+                    <span>Shop Women <span class="bi bi-arrow-right"></span> </span>
+                </div>
+            </div>
+            <div class="men-fashion">
+                <div class="main-title">Men</div>
+                <div class="btn-shop">
+                    <span>Shop Men <span class="bi bi-arrow-right"></span> </span>
+                </div>
+            </div>
+            <div class="kids-fashion">
+                <div class="main-title">Kids</div>
+                <div class="btn-shop">
+                    <span>Shop Kids <span class="bi bi-arrow-right"></span> </span>
+                </div>
+            </div>
+        </main>
+    </section>
+
+
+    <!-- footer section -->
+    <footer>
+        <div class="left-panel">
+            <div>
+                <span class="service-title">ABOUT</span>
+                <span>Contact Us</span>
+                <span>About Us</span>
+                <span>Careers</span>
+                <span>Flipkart Stories</span>
+                <span>Press</span>
+                <span>Corporate Information</span>
+            </div>
+            <div>
+                <span class="service-title">GROUP COMPANIES</span>
+                <span>Myntra</span>
+                <span>Cleartrip</span>
+                <span>Shopsy</span>
+            </div>
+            <div>
+                <span class="service-title">HELP</span>
+                <span>Payments</span>
+                <span>Shipping</span>
+                <span>Cancellation & Returns</span>
+                <span>FAQ</span>
+            </div>
+
+            <div>
+                <span class="service-title">CONSUMER POLICY</span>
+                <span>Cancellation & Returns</span>
+                <span>Terms Of Use</span>
+                <span>Security</span>
+                <span>Privacy</span>
+                <span>Sitemap</span>
+                <span>Grievance Redressal</span>
+                <span>EPR Compliance</span>
+                
+            </div>
+
+        </div>
+
+        <div class="right-panel">
+            <div>
+                <span class="service-title">Mail Us:</span>
+                <address>
+                    <span> Internet Private Limited,</span>
+                    <span>Buildings Alyssa, Begonia &</span>
+                    <span>Clove Embassy Tech Village,</span>
+                    <span>Outer Ring Road, Devarabeesanahalli Village,</span>
+                    <span>Bengaluru, 560103,</span>
+                    <span>Karnataka, India</span>
+                </address>
+                <br>
+                <div class="service-title">SOCIAL:</div>
+                <aside>
+                    <span class="bi bi-facebook"></span>
+                    <span class="bi bi-twitter"></span>
+                    <span class="bi bi-youtube"></span>
+                    <span class="bi bi-instagram"></span>
+                </aside>
+            </div>    
+        
+            <div>
+                <span class="service-title">Registered Office Address:</span>
+                <span>Flipkart Internet Private Limited,</span>
+                <span>Buildings Alyssa, Begonia &</span>
+                <span>Clove Embassy Tech Village,</span>
+                <span>Outer Ring Road, Devarabeesanahalli Village,</span>
+                <span>Bengaluru, 560103,</span>
+                <span>Karnataka, India</span>
+                <span>CIN : U51109KA2012PTC066107</span>
+                <span>Telephone: 044-45614700 / 044-67415800</span>
+            </div>
+        </div>
+
+    </footer>
+    <hr color="#454D5E" width="100%">
+    <footer class="footer-2">
+        <div>
+            <span class="bi bi-shop"></span>
+            <span>Become a Seller</span>
+        </div>
+        <div>
+            <span class="bi bi-stars"></span>
+            <span>Advertise</span>
+        </div>
+        <div>
+            <span class="bi bi-gift-fill"></span>
+            <span>Gift Cards</span>
+        </div>
+        <div>
+            <span class="bi bi-question"></span>
+            <span>Help Center</span>
+        </div>
+        <div>
+            <span>© 2007-2025 Flipkart.com</span>
+        </div>
+        <div>
+            <img src="./public/images/payment.png" alt="pay">
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Form Elements</title>
+  <style>
+    /* Center the form container vertically and horizontally */
+    body {
+      display: flex;
+      justify-content: center; /* horizontal center */
+      align-items: center;     /* vertical center */
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column; /* Stack elements vertically */
+      align-items: flex-start; /* Align labels to the left */
+      gap: 10px; /* Space between elements */
+      background-color: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 3px;
+    }
+
+    input, select, textarea {
+      width: 250px;
+      padding: 5px;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    .form-section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-section p {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  
+</head>
+<body>
+
+  <h2>Form Elements Example</h2>
+
+  <form>
+
+    <!-- Textbox: Used for single line text input -->
+    <label for="textbox">Textbox:</label>
+    <input type="text" id="textbox" name="textbox"><br><br>
+
+    <!-- Password: Used for hidden password input -->
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+
+    <!-- Number: Used for numeric input -->
+    <label for="number">Number:</label>
+    <input type="number" id="number" name="number" min="1" max="100"><br><br>
+
+    <!-- Range: Used to select a numeric value within a range -->
+    <label for="range">Range (0-100):</label>
+    <input type="range" id="range" name="range" min="0" max="100"><br><br>
+
+    <!-- Date & Time: Used for selecting date and time -->
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date">
+    <label for="time">Time:</label>
+    <input type="time" id="time" name="time"><br><br>
+
+    <!-- Color: Used to pick a color -->
+    <label for="color">Pick a Color:</label>
+    <input type="color" id="color" name="color"><br><br>
+
+    <!-- Email: Used for email input -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+
+    <!-- URL: Used for entering a website address -->
+    <label for="url">Website URL:</label>
+    <input type="url" id="url" name="url"><br><br>
+
+    <!-- File: Used to upload a file -->
+    <label for="file">Upload File:</label>
+    <input type="file" id="file" name="file"><br><br>
+
+    <!-- Radio Button: Used to select one option from a group -->
+    <p>Gender:</p>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br><br>
+
+    <!-- Checkbox: Used to select multiple options -->
+    <p>Hobbies:</p>
+    <input type="checkbox" id="reading" name="hobby" value="reading">
+    <label for="reading">Reading</label>
+    <input type="checkbox" id="sports" name="hobby" value="sports">
+    <label for="sports">Sports</label>
+    <input type="checkbox" id="music" name="hobby" value="music">
+    <label for="music">Music</label><br><br>
+
+    <!-- Dropdown List: Single selection -->
+    <label for="city">Select City:</label>
+    <select id="city" name="city">
+        <option value="pune">Hyderabad</option>
+        <option value="pune">Kolkata</option>
+        <option value="pune">Pune</option>
+        <option value="mumbai">Mumbai</option>
+        <option value="delhi">Delhi</option>
+        <option value="bengaluru">Bengaluru</option>
+    </select><br><br>
+
+    <!-- List Box: Multiple selection -->
+    <label for="fruits">Select Fruits (List Box):</label>
+    <select id="fruits" name="fruits" multiple size="4">
+      <option value="apple">Apple</option>
+      <option value="banana">Banana</option>
+      <option value="orange">Orange</option>
+      <option value="mango">Mango</option>
+      <option value="apple">Apple</option>
+      <option value="banana">Banana</option>
+      <option value="orange">Orange</option>
+      <option value="mango">Mango</option>
+    </select><br><br>
+
+    <!-- Text Area: Used for multiple lines of text -->
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+
+    <!-- Submit Button -->
+    <input type="submit" value="Submit">
+
+  </form>
+
+</body>
+</html>

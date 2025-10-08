@@ -1,0 +1,163 @@
+Ex: Bootstrap header
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bootstrap</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+
+        header {
+
+            display: flex;
+
+            flex-direction: row;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 20px;
+
+            font-size: 20px;
+
+            font-family: Arial;
+
+            background-color:#712cf9;
+
+            color:white;
+
+        }
+
+        aside {
+
+            display: inline;
+
+        }
+
+        .bi-bootstrap {
+
+            font-size: 25px;
+
+        }
+
+        nav span {
+
+            padding-right: 20px;
+
+        }
+
+        aside span {
+
+            padding-right: 10px;
+
+        }
+
+        .search-bar {
+
+            background-color: rgba(182, 77, 230, 0.542);
+
+            padding: 10px;
+
+            width: 300px;
+
+            display: flex;
+
+            flex-direction: row;
+
+            justify-content: space-between;
+
+        }
+
+        .bi-command{
+
+            background-color: rgb(64, 8, 118);
+
+            padding: 5px;
+
+            font-size: 12px;
+
+            border-radius: 5px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div>
+
+           <nav>
+
+            <span class="bi bi-bootstrap"></span>
+
+            <span>Docs</span>
+
+            <span>Examples</span>
+
+            <span>Icons</span>
+
+            <span>Themes</span>
+
+            <span>Blog</span>
+
+           </nav>
+
+        </div>
+
+        <div>
+
+            <div class="search-bar">
+
+                <span class="bi bi-search"> Search </span>
+
+                <span class="bi bi-command">K</span>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <aside>
+
+                <span class="bi bi-github"></span>
+
+                <span class="bi bi-twitter-x"></span>
+
+                <span class="bi bi-opencollective"></span>
+
+            </aside>
+
+            <span>|</span>
+
+            <span>V5.3</span>
+
+            <span>|</span>
+
+            <span class="bi bi-sun-fill"></span>
+
+            <span class="bi bi-caret-down-fill"></span>
+
+        </div>
+
+    </header>
+
+</body>
+
+</html>

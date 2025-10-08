@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 15px;
+            background-color: rgb(126, 121, 121);
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 20px;
+            color: aliceblue;
+        }
+        .products {
+            display: inline-block;
+            margin: 30px;
+            vertical-align: top;
+            
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .card img {
+            width: 100;
+            height: 188px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card h3 {
+            margin: 10px 0 5px;
+            font-size: 18px;
+            color: #333;
+        }
+        .price {
+            color: #0288D1;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card button {
+            background: #4FC3F7;
+            border: none;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .card button:hover {
+            background: #0288D1;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>Mobiles</h2>
+
+    <div class="products">
+        <div class="card">
+            <img src="./images/iphone13.jpg" alt="iphpne13">
+            <h3>Apple iPhone 13 (128GB) - Blue</h3>
+            <p>₹43900</p>
+            <button>Add to cart</button>
+        </div>
+    </div>
+
+    <div class="products">
+        <div class="card">
+            <img src="./images/iphone15.jpg" alt="iphpne15">
+            <h3>Apple iPhone 15 (128GB) - Black</h3>
+            <p>₹59900</p>
+            <button>Add to cart</button>
+        </div>
+    </div>
+
+    <div class="products">
+        <div class="card">
+            <img src="./images/iphone16.jpg" alt="iphpne16">
+            <h3>iPhone 16 256 GB: 5G Mobile Phone with Camera Control, A18 Chip and a Big Boost in Battery</h3>
+            <p>₹79900</p>
+            <button>Add to cart</button>
+        </div>
+    </div>
+</body>
+</html>

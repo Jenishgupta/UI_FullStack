@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+ <html lang="en-in">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filpkart-ik</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        nav{
+            border: 1px solid black;
+            margin-top: 10px;
+            height: 200px;
+
+        }
+        
+        .item{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content: space-around;
+            font-weight: bold ;
+        }
+        main{
+            display: grid;
+            grid-template-columns: 3fr 9fr;
+            padding-top: 5px;
+        }
+        .item-3{
+            display: flex;
+            flex-direction: row;
+
+        }
+        .item-2{
+            display: grid;
+            grid-template-columns: 9fr 3fr;
+            align-items: center;
+            padding-right: -30px;
+        
+        }
+        .item-3 li{
+            list-style: none;
+            padding-left: 10px;
+            color: gray;
+        
+
+        }
+        .item-3 li::before{
+            content: ">";
+        }
+        .item-3 li:first-child::before{
+            content: "";
+        }
+        .breadcrumb-1{
+            padding-right: 20px;
+            padding-left: 20px;
+            margin-left: 20px;
+        }
+        .item-4{
+            display: inline-block;
+            width: 105px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+        }
+        .breadcrumb{
+            margin-left: -50px;
+            
+        }
+        .main-1{
+            font-size: 20px;
+        }
+        .badge{
+            padding-top: 10px;
+        }
+        .badge-2{
+            background-color: rgb(85, 233, 85);
+            color: white;
+            font-size: 25px;
+        }
+        .badge-3{
+            color: gray;
+            font-size: 18px;
+            padding-left: 10px;
+        }
+        .extra-off{
+            font-size: 18px;
+            padding-top: 15px;
+            color: rgb(85, 233, 85);
+        }
+        .price-list{
+            padding-top: 10px;
+        }
+        .price-1{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .price-2{
+            font-size: 18px;
+            padding-left: 10px;
+            color: gray;
+        }
+        .price-off{
+            padding-left: 10px;
+            font-size: 20px;
+            color: rgb(85, 233, 85);
+        }
+        .offer-list{
+            padding-top: 10px;
+            font-size: 18px;
+        }
+        .list{
+            color: rgb(53, 53, 240);
+        }
+        .offer-list-1{
+            padding-top: 10px;
+            font-size: 15px;
+        }
+        .coin{
+            font-size:18px ;
+            padding-top: 10px;
+        }
+        .offer-list-1 li{
+            list-style: none;
+            padding: 8px;
+            color: rgb(85, 233, 85);
+        }
+
+        .bank-offer{
+            color: rgba(0, 0, 0, 0.685);
+            padding-left: 10px;
+        }
+        .last{
+            color: rgba(24, 24, 184, 0.562);
+        } 
+    </style>
+</head>
+<body>
+    <main>
+        <div class="item-1"></div>
+            <div class="item-2">
+                <div class="breadcrumb">
+                    <ol class="item-3">
+                        <li>Home</li>
+                        <li class="item-4">Mobile & Accessories</li>
+                        <li>Mobile</li>
+                        <li>Apple Mobile</li>
+                        <li>Apple i phone</li>
+                    </ol>
+
+                </div>
+                <div class="breadcrumb-1">
+                    <span class="bi bi-app"> Compare</span>
+                    <span class="bi bi-share-fill"> share</span>
+                </div>
+                <div class="style">
+                    <span class="main-1">Apple iPhone 15 (Black, 128 GB)</span>
+                    <div class="badge">
+                        <span class="badge-2">4.6 <i class="bi bi-star"></i></span>
+                        <span class="badge-3">2,78,105 Ratings & 9,780 Reviews</span>
+                        <div class="extra-off">
+                            <span> Extra  &#8377 4100 off</span>
+                        </div>
+                    </div>
+                    <div class="price-list">
+                        <span class="price-1">&#8377 64,900</span>
+                        <span class="price-2">  <strike> &#8377 69,900</strike>  </span>
+                        <span class="price-off"> 6% off</span>
+                    </div>
+                    <div class="offer-list"> 
+                        + ₹109 Protect Promise Fee  <span class="list">Learn more </span>
+                    </div>
+                    <div class="offer-list-1"> Secure delivery by 9 sep, Tuesday</div>
+                    <div class="offer-list-1">
+                        <h3>Available offers</h3>        
+                        <li class="bi bi-tag-fill"> <span class="bank-offer"><b>Bank Offer5%</b> cashback on Flipkart Axis Bank Credit Card upto ₹4,000 per statement quarter </span><span class="last">T&C</span></li>
+                        <li class="bi bi-tag-fill"><span  class="bank-offer"> <b>Bank Offer5%</b>cashback on Flipkart SBI Credit Card upto ₹4,000 per calendar quarter </span><span class="last">T&C</span></li>
+                        <li  class="bi bi-tag-fill"><span class="bank-offer"><b>Bank Offer5%</b> cashback on Axis Bank Flipkart Debit Card </span><span class="last">T&C</span></li>
+                        <li class="bi bi-tag-fill"> <span class="bank-offer"><b>Special PriceGet </b>extra ₹5000 off (price inclusive of cashback/coupon) </span><span class="last">T&C</span></li>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
