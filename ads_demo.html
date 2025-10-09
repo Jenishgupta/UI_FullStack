@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D Image Cube</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    }
+
+    .cube {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      transform: rotateX(15deg) rotateY(25deg);
+      transform-style: preserve-3d;
+    }
+
+    .cube img {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border: 2px solid #333;
+      border-radius: 8px;
+    }
+
+    /* Front */
+    .front {
+      transform: translateZ(100px);
+    }
+
+    /* Back */
+    .back {
+      transform: rotateY(180deg) translateZ(100px);
+    }
+
+    /* Right */
+    .right {
+      transform: rotateY(90deg) translateZ(100px);
+    }
+
+    /* Left */
+    .left {
+      transform: rotateY(-90deg) translateZ(100px);
+    }
+
+    /* Top */
+    .top {
+      transform: rotateX(90deg) translateZ(100px);
+    }
+
+    /* Bottom */
+    .bottom {
+      transform: rotateX(-90deg) translateZ(100px);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="cube">
+    <img src="./Shop_if/images/apple2024.jpg" class="front" alt="Front">
+    <img src="./Shop_if/images/iphone15.jpg" class="back" alt="Back">
+    <img src="./Shop_if/images/applemac.jpg" class="right" alt="Right">
+    <img src="./Shop_if/images/apple2024.jpg" class="left" alt="Left">
+    <img src="./Shop_if/images/iphone15.jpg" class="top" alt="Top">
+    <img src="./Shop_if/images/applemac.jpg" class="bottom" alt="Bottom">
+  </div>
+</body>
+</html>
