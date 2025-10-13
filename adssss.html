@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Cube</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    perspective: 1000px; /* 3D depth */
+  }
+
+  .cube {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform: rotateX(15deg) rotateY(25deg);
+    transition: transform 2s;
+  }
+
+  /* Rotate cube on hover */
+  .cube:hover {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+
+  .cube div {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    transition: transform 2s;
+  }
+
+  /* Cube sides with skew & scale */
+  .front  { background-color: lightcoral; transform: translateZ(100px) skewX(5deg); }
+  .left   { background-color: lightblue; transform: rotateY(-90deg) translateZ(100px) skewY(-10deg); }
+  .bottom { background-color: lightgreen; transform: rotateX(-90deg) translateZ(100px) scaleX(1.2) scaleY(1.1); }
+
+</style>
+</head>
+<body>
+
+  <div class="cube">
+    <div class="front"></div>
+    <div class="left"></div>
+    <div class="bottom"></div>
+  </div>
+
+</body>
+</html>
