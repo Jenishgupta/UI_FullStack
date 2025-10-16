@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Alerts</title>
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+  <!-- Bootstrap JS -->
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+
+<body class="p-4">
+
+  <section>
+    <h2 class="mb-4">Alerts</h2>
+
+    <!-- Success Alert -->
+    <div class="alert alert-success alert-dismissible fade show w-50 mb-4" role="alert">
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <h4 class="alert-heading">Registered Successfully</h4>
+      <p>Your account has been created and an activation link has been sent to your email.</p>
+      <a href="#" class="alert-link">Need Help?</a>
+      <hr>
+      <button type="button" class="btn btn-success mt-2" data-bs-dismiss="alert">OK</button>
+    </div>
+
+    <!-- Danger Alert -->
+    <div class="alert alert-danger alert-dismissible fade show w-50" role="alert">
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <h4 class="alert-heading">Invalid Login</h4>
+      <p>Unable to login. Please check your credentials.</p>
+      <a href="#" class="alert-link">Need Help?</a>
+      <hr>
+      <button type="button" class="btn btn-danger mt-2" data-bs-dismiss="alert">OK</button>
+    </div>
+  </section>
+
+</body>
+</html>

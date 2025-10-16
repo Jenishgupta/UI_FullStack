@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Search & Register</title>
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+  <!-- Bootstrap JS -->
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+
+<body class="p-4 bg-light">
+
+  <!-- Amazon Search Section -->
+  <section class="mb-5">
+    <h2 class="mb-3 text-primary">General Search</h2>
+
+    <div class="input-group w-50">
+      <select class="form-select w-auto">
+        <option selected>All</option>
+        <option>Electronics</option>
+        <option>Fashion</option>
+        <option>Books</option>
+      </select>
+      <input type="text" class="form-control" placeholder="Search General.in">
+      <button class="btn btn-warning bi bi-search" title="Search"></button>
+    </div>
+  </section>
+
+  <!-- Register Section -->
+  <section>
+    <h2 class="mb-3 text-success">Register</h2>
+
+    <!-- Username -->
+    <div class="input-group w-25 mb-3">
+      <span class="input-group-text bg-secondary text-white">
+        <i class="bi bi-person-circle"></i>
+      </span>
+      <input type="text" placeholder="User Name" class="form-control">
+      <span class="input-group-text bg-light">
+        <input type="checkbox" title="Remember username">
+      </span>
+    </div>
+
+    <!-- Password -->
+    <div class="input-group w-25 mb-3">
+      <span class="input-group-text bg-secondary text-white">
+        <i class="bi bi-key-fill"></i>
+      </span>
+      <input type="password" placeholder="Password" class="form-control">
+      <span class="input-group-text bg-light">
+        <input type="checkbox" title="Show password">
+      </span>
+    </div>
+  </section>
+
+</body>
+</html>
