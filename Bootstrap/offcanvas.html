@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offcanvas Demo</title>
+
+  <!-- Bootstrap Icons and CSS -->
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+  <!-- Bootstrap JS -->
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+<body class="p-3 bg-light">
+
+  <!-- Navbar -->
+  <nav class="border rounded fs-4 d-flex justify-content-between align-items-center p-2 bg-white shadow-sm">
+    <!-- Left Menu Button -->
+    <button data-bs-target="#menu" data-bs-toggle="offcanvas" class="btn bi bi-list"></button>
+
+    <!-- Center Navigation Links -->
+    <div class="d-none d-md-block">
+      <span class="mx-3">Home</span>
+      <span class="mx-3">Shop</span>
+      <span class="mx-3">Pages</span>
+    </div>
+
+    <!-- Right Cart Button -->
+    <button data-bs-target="#cart" data-bs-toggle="offcanvas" class="btn btn-warning bi bi-cart4"></button>
+  </nav>
+
+  <!-- Left Offcanvas Menu -->
+  <div class="offcanvas offcanvas-start" id="menu">
+    <div class="offcanvas-header bg-dark text-white">
+      <h4 class="offcanvas-title">Amazon</h4>
+      <button class="btn btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-unstyled fs-5">
+        <li class="mb-2"><i class="bi bi-laptop me-2"></i> Electronics</li>
+        <li class="mb-2"><i class="bi bi-bag-heart me-2"></i> Fashion</li>
+        <li class="mb-2"><i class="bi bi-shoe-prints me-2"></i> Footwear</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Right Offcanvas Cart -->
+  <div class="offcanvas offcanvas-end" id="cart">
+    <div class="offcanvas-header bg-warning text-white">
+      <h4 class="offcanvas-title">Your Cart</h4>
+      <button class="btn btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body fs-5">
+      <p>Your cart is currently empty.</p>
+      <button class="btn btn-outline-dark w-100">Start Shopping</button>
+    </div>
+  </div>
+
+</body>
+</html>

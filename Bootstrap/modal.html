@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Modal Example</title>
+  
+  <!-- Bootstrap CSS and Icons -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  
+  <!-- Bootstrap JS Bundle -->
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+<body class="p-4 bg-light">
+
+  <h2 class="mb-4">Bootstrap Modal Demo</h2>
+
+  <!-- Buttons -->
+  <button data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-primary me-2">
+    <i class="bi bi-person-fill"></i> Login
+  </button>
+
+  <button data-bs-toggle="modal" data-bs-target="#adsModal" class="btn btn-warning">
+    Show Ads
+  </button>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="bi bi-person-fill"></i> User Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="username" class="form-label">User Name</label>
+              <input type="text" id="username" class="form-control" placeholder="Enter your username">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" id="password" class="form-control" placeholder="Enter your password">
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning">Login</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Ads Modal -->
+  <div class="modal fade" id="adsModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center">
+        
+        <div class="modal-header">
+          <h5 class="modal-title">Women Shopping</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <img src="../public/images/women-fashion.jpg" alt="Women Fashion" class="img-fluid rounded shadow-sm mb-3">
+          <p class="text-muted">Discover the latest trends in women’s fashion. Shop now!</p>
+        </div>
+
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-success">Shop Now</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

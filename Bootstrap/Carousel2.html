@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Carousel with Custom Intervals</title>
+
+  <!-- Bootstrap CSS & Icons -->
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+  <!-- Bootstrap JS -->
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+<body class="bg-light">
+
+  <div id="banners" class="carousel slide" data-bs-ride="carousel">
+    
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#banners" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#banners" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#banners" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- Carousel Inner -->
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="3000">
+        <img src="../public/images/slide-1.png" class="d-block w-100" style="height: 200px; object-fit: cover;" alt="Slide 1">
+      </div>
+      <div class="carousel-item" data-bs-interval="1000">
+        <img src="../public/images/slide-2.png" class="d-block w-100" style="height: 200px; object-fit: cover;" alt="Slide 2">
+      </div>
+      <div class="carousel-item" data-bs-interval="5000">
+        <img src="../public/images/slide-3.png" class="d-block w-100" style="height: 200px; object-fit: cover;" alt="Slide 3">
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#banners" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#banners" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+  </div>
+
+</body>
+</html>

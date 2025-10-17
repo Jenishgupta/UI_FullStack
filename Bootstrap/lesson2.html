@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Components - Naresh IT</title>
+
+  <!-- Bootstrap CSS & Icons -->
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+  <!-- Bootstrap JS -->
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+<body class="bg-light p-4">
+
+<!-- ===========================
+       Section 1: Alerts
+  ============================ -->
+<section class="mb-5">
+  <h2 class="mb-4">Alerts</h2>
+
+  <div class="alert alert-success alert-dismissible fade show w-50 mb-4" role="alert">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <h4 class="alert-heading">Registered Successfully</h4>
+    <p>Your account has been created and an activation link has been sent to your email.</p>
+    <a href="#" class="alert-link">Need Help?</a>
+    <hr>
+    <button type="button" class="btn btn-success mt-2" data-bs-dismiss="alert">OK</button>
+  </div>
+
+  <div class="alert alert-danger alert-dismissible fade show w-50" role="alert">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <h4 class="alert-heading">Invalid Login</h4>
+    <p>Unable to login. Please check your credentials and try again.</p>
+    <a href="#" class="alert-link">Need Help?</a>
+    <hr>
+    <button type="button" class="btn btn-danger mt-2" data-bs-dismiss="alert">OK</button>
+  </div>
+</section>
+
+<!-- ===========================
+       Section 2: Modal 
+  ============================ -->
+<section class="mb-5">
+  <h2 class="mb-4">Bootstrap Modal Demo</h2>
+
+  <!-- Buttons -->
+  <button data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-primary me-2">
+    <i class="bi bi-person-fill"></i> Login
+  </button>
+
+  <button data-bs-toggle="modal" data-bs-target="#adsModal" class="btn btn-warning">
+    Show Ads
+  </button>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="bi bi-person-fill"></i> User Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="username" class="form-label">User Name</label>
+              <input type="text" id="username" class="form-control" placeholder="Enter your username">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" id="password" class="form-control" placeholder="Enter your password">
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning">Login</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Ads Modal -->
+  <div class="modal fade" id="adsModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center">
+        
+        <div class="modal-header">
+          <h5 class="modal-title">Women Shopping</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <img src="../public/images/women-fashion.jpg" alt="Women Fashion" class="img-fluid rounded shadow-sm mb-3">
+          <p class="text-muted">Discover the latest trends in women’s fashion. Shop now!</p>
+        </div>
+
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-success">Shop Now</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+       Section 3: Offcanvas 
+  ============================ -->
+<section class="mb-5">
+  <h2 class="mb-4">Offcanvas</h2>
+
+  <nav class="border fs-4 d-flex justify-content-between align-items-center p-2 bg-white shadow-sm rounded">
+    <button data-bs-target="#menu" data-bs-toggle="offcanvas" class="btn bi bi-list"></button>
+    <div>
+      <span class="mx-3">Home</span>
+      <span class="mx-3">Shop</span>
+      <span class="mx-3">Pages</span>
+    </div>
+    <button data-bs-target="#cart" data-bs-toggle="offcanvas" class="btn btn-warning bi bi-cart4"></button>
+  </nav>
+
+  <!-- Left Menu -->
+  <div class="offcanvas offcanvas-start" id="menu">
+    <div class="offcanvas-header bg-dark text-white">
+      <h4 class="offcanvas-title">Amazon</h4>
+      <button class="btn btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-unstyled fs-5">
+        <li class="mb-2"><i class="bi bi-laptop me-2"></i>Electronics</li>
+        <li class="mb-2"><i class="bi bi-bag-heart me-2"></i>Fashion</li>
+        <li class="mb-2"><i class="bi bi-shoe-prints me-2"></i>Footwear</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Right Cart -->
+  <div class="offcanvas offcanvas-end" id="cart">
+    <div class="offcanvas-header bg-warning text-white">
+      <h4 class="offcanvas-title">Your Cart</h4>
+      <button class="btn btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body fs-5">
+      <p>Your cart is currently empty.</p>
+      <button class="btn btn-outline-dark w-100">Start Shopping</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+       Section 4: Carousel
+  ============================ -->
+<section class="mb-5">
+  <h2 class="mb-4">Carousel</h2>
+
+  <div id="banners" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#banners" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#banners" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#banners" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="3000">
+        <img src="../public/images/slide-1.png" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Slide 1">
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="../public/images/slide-2.png" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Slide 2">
+      </div>
+      <div class="carousel-item" data-bs-interval="4000">
+        <img src="../public/images/slide-3.png" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Slide 3">
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#banners" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#banners" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+
+</body>
+</html>
