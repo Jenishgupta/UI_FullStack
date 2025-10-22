@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootstrap Collapse Example</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css" />
+
+  <!-- Bootstrap JS -->
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+</head>
+
+<body class="p-4">
+  <div class="container">
+    <h2 class="mb-3">Collapse Example</h2>
+
+    <!-- Button -->
+    <button class="btn btn-dark w-100" type="button"
+      data-bs-toggle="collapse" data-bs-target="#q1"
+      aria-expanded="true" aria-controls="q1">
+      What is Netflix?
+    </button>
+
+    <!-- Collapsible Content -->
+    <div id="q1" class="collapse mt-3 show">
+      <p>
+        Netflix is a streaming service that offers a wide variety of TV shows, movies,
+        anime, documentaries, and more on thousands of internet-connected devices.
+      </p>
+      <p>
+        You can watch as much as you want, whenever you want, without a single commercial —
+        all for one low monthly price.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
