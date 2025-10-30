@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function DeleteClick() {
+            let result = confirm("Delete Record\nAre you sure?");
+            const messageElement = document.querySelector("p");
+
+            if (result === true) {
+                messageElement.outerHTML = "<h2 style='color:red'>Deleted..</h2>";
+            } else {
+                messageElement.innerText = "Canceled..";
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="DeleteClick()">Delete</button>
+    <p></p>
+</body>
+</html>

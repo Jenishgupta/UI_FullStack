@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function SearchClick() {
+            const result = prompt("Search Products", "e.g., shoes, jeans");
+            const message = document.querySelector("p");
+
+            if (result === null) {
+                alert("You canceled the search.");
+                message.textContent = "Search canceled.";
+            } 
+            else if (result.trim() === "") {
+                alert("Please provide a product name.");
+                message.textContent = "";
+            } 
+            else {
+                message.textContent = "You are searching for: " + result;
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="SearchClick()">Search</button>
+    <p></p>
+</body>
+</html>

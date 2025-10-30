@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body class="container-fluid">
+    <h3>Search</h3>
+
+    <form action="./results.html" class="input-group w-50">
+        <select name="category" class="input-group-text">
+            <option>Select Category</option>
+            <option>Fashion</option>
+            <option>Footwear</option>
+            <option>Electronics</option>
+        </select>
+
+        <input 
+            class="form-control" 
+            type="text" 
+            name="product" 
+            placeholder="Search product..."
+        >
+
+        <button type="submit" class="btn btn-warning">
+            <i class="bi bi-search"></i>
+        </button>
+    </form>
+</body>
+</html>

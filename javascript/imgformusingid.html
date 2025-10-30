@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+    function bodyload() {
+      // Set image source
+      document.getElementById("pic").src = "../public/images/kids-fashion.jpg";
+
+      // Set Register button label
+      document.getElementById("btnRegister").value = "Register";
+
+      // Set Login button label
+      document.getElementById("btnLogin").value = "Login";
+    }
+  </script>
+</head>
+
+<body onload="bodyload()">
+  <div>
+    <img id="pic" width="100" height="100" border="1">
+  </div>
+
+  <div>
+    <form name="frmRegister">
+      <h2>Register</h2>
+      <dl>
+        <dt>User Name</dt>
+        <dd><input type="text"></dd>
+      </dl>
+      <input id="btnRegister" type="button">
+    </form>
+  </div>
+
+  <div>
+    <form name="frmLogin">
+      <h2>User Login</h2>
+      <dl>
+        <dt>Email</dt>
+        <dd><input type="email"></dd>
+
+        <dt>Password</dt>
+        <dd><input type="password"></dd>
+      </dl>
+      <input id="btnLogin" type="button">
+    </form>
+  </div>
+</body>
+</html>
