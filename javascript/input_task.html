@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script>
+        function submitclick(){
+            document.getElementById("id").textContent=document.getElementById("product").value ;
+            document.getElementById("nam").textContent=document.getElementById("name").value ;
+            document.getElementById("pri").textContent=document.getElementById("price").value ;
+            document.getElementById("shi").textContent=document.getElementById("shipped").value ;
+        }
+    </script>
+</head>
+<body class="container-fluid p-5">
+    <h2>Product Details</h2>
+      <div class="w-25">  
+         <dl class="row">
+            <dt class="col-4">Product Id</dt>
+            <dd class="col-8"><input type="number" placeholder="Enter Id" class="form-control" id="product"></dd>
+            <dt class="col-4">Name</dt>
+            <dd class="col-8"><input type="text" class="form-control" placeholder="Enter Item" id="name"></dd>
+            <dt class="col-4">Price</dt>
+            <dd class="col-8"><input type="number" class="form-control" placeholder="Enter Price" id="price"></dd>
+            <dt class="col-4">Quantity</dt>
+            <dd class="col-8"><input type="number" class="form-control" placeholder="Enter Quantity" id="Quantity"></dd>
+            <dt class="col-4">Shipped To</dt>
+            <dd class="col-8">
+                <select id="shipped" class="form-select  ">
+                    <option>Select Shipping Adress</option>
+                    <option>Ameerpet</option>
+                    <option>Balkampet</option>
+                    <option>cheerapalli</option>
+                    <option>Panjagutta</option>
+                </select>
+            </dd>
+         </dl>  
+    <button class="btn btn-primary mt-3" data-bs-target="#pop" data-bs-toggle="modal" onclick="submitclick() ">Submit</button>
+      </div>
+      <div class="modal fade" id="pop">
+         <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+            <h3>Product Summary</h3>
+        </div>
+        <div class="modal-body">
+            <div class="row mt-4">
+                <span class="col-4 fs-6 fw-bold mb-2">Product Id :</span>
+                <span class="col-8" id="id"></span>
+                <span class="col-4 fs-6 fw-bold mb-2"> Name :</span>
+                <span class="col-8" id="nam"></span>
+                <span class="col-4 fs-6 fw-bold mb-2"> Price :</span>
+                <span class="col-8" id="pri"></span>
+                <span class="col-4 fs-6 fw-bold mb-2">Shipped To :</span>
+                <span class="col-8" id="shi"></span>
+            </div>
+            <button class="btn btn-primary mt-4" data-bs-dismiss="modal">OK</button>
+        </div>
+            </div>
+         </div>
+      </div>
+</body>
+</html>

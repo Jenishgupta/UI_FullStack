@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <script>
+        function ToggleSort() {
+            var sortButton = document.getElementById("btnSort");
+            sortButton.className =
+                (sortButton.className === "bi bi-sort-alpha-down")
+                    ? "bi bi-sort-alpha-up"
+                    : "bi bi-sort-alpha-down";
+        }
+
+        function ToggleShow() {
+            var showButton = document.getElementById("btnShow");
+            var image = document.querySelector("img");
+
+            showButton.textContent =
+                (showButton.textContent === "Show") ? "Hide" : "Show";
+
+            image.style.display =
+                (image.style.display === "none") ? "block" : "none";
+        }
+    </script>
+</head>
+<body style="font-family: Arial; margin: 20px;">
+    <button id="btnSort" onclick="ToggleSort()" class="bi bi-sort-alpha-down"></button>
+
+    <br><br>
+
+    <div>
+        <button id="btnShow" onclick="ToggleShow()">Show</button>
+        <br><br>
+        <img style="display: none;" src="../public/images/women-fashion.jpg" width="200" height="200">
+    </div>
+</body>
+</html>

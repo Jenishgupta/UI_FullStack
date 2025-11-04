@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function VerifyPassword() {
+            var progressBar = document.getElementById("progressBar");
+            var password = document.getElementById("txtPwd").value;
+            var lblPwd = document.getElementById("lblPwd");
+            var regExp = /(?=.*[A-Z])\w{4,15}/;
+
+            if (password.length == 0) {
+                lblPwd.innerHTML = "Password Required".fontcolor('white');
+                progressBar.style.width = "0%";
+                progressBar.className = "progress-bar";
+            } else {
+                if (password.match(regExp)) {
+                    lblPwd.innerHTML = "Strong Password".fontcolor('white');
+                    progressBar.style.width = "100%";
+                    progressBar.className = "progress-bar bg-success progress-bar-striped progress-bar-animated";
+                } else {
+                    if (password.length < 4) {
+                        lblPwd.innerHTML = "Poor Password".fontcolor('white');
+                        progressBar.style.width = "40%";
+                        progressBar.className = "progress-bar bg-danger progress-bar-striped progress-bar-animated";
+                    } else {
+                        lblPwd.innerHTML = "Weak Password".fontcolor('white');
+                        progressBar.style.width = "70%";
+                        progressBar.className = "progress-bar bg-warning progress-bar-striped progress-bar-animated";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <dl class="mt-4 w-25">
+        <dt>Password</dt>
+        <dd>
+            <input type="password" onkeyup="VerifyPassword()" id="txtPwd" class="form-control">
+        </dd>
+        <dd class="progress" style="height: 30px;">
+            <div class="progress-bar" id="progressBar">
+                <span style="color:white;" id="lblPwd"></span>
+            </div>
+        </dd>
+    </dl>
+</body>
+</html>

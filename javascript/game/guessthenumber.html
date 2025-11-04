@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Number</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      font-size: 1.2em;
+      margin: 10px;
+    }
+    #message {
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎲 Guess the Number (1–100)</h1>
+  <input type="number" id="guess" placeholder="Enter your guess">
+  <button onclick="checkGuess()">Check</button>
+  <p id="message"></p>
+
+  <script>
+    let secretNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+
+    function checkGuess() {
+      const guess = Number(document.getElementById("guess").value);
+      const message = document.getElementById("message");
+      attempts++;
+
+      if (guess === secretNumber) {
+        message.textContent = `🎉 Correct! You guessed it in ${attempts} tries.`;
+        message.style.color = "green";
+      } else if (guess < secretNumber) {
+        message.textContent = "Too low! Try again.";
+        message.style.color = "orange";
+      } else {
+        message.textContent = "Too high! Try again.";
+        message.style.color = "orange";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Comment Form</title>
+
+    <script>
+        function VerifyName() {
+            var username = document.getElementById("txtName").value;
+            var Namelabel = document.getElementById("lblName");
+
+            if (username.length === 0) {
+                Namelabel.innerHTML = "User Name Required".fontcolor('red').fontsize('2');
+            } else {
+                Namelabel.innerHTML = "";
+            }
+        }
+
+        function VerifyComments() {
+            var comments = document.getElementById("txtComments").value;
+            var lblComments = document.getElementById("lblComments");
+
+            lblComments.innerHTML = `${100 - comments.length} chars left`.fontcolor('gold');
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1 {
+            color: #0066cc;
+        }
+
+        dl {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+        }
+
+        dt {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        dd {
+            margin: 0 0 10px 0;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #0066cc;
+            box-shadow: 0 0 4px rgba(0, 102, 204, 0.3);
+        }
+
+        #lblName,
+        #lblComments {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Feedback Form</h1>
+
+    <dl>
+        <dt>User Name</dt>
+        <dd>
+            <input 
+                type="text" 
+                id="txtName" 
+                onkeyup="VerifyName()" 
+                onblur="VerifyName()"
+                placeholder="Enter your name"
+            >
+        </dd>
+        <dd id="lblName"></dd>
+
+        <dt>Your Comments</dt>
+        <dd>
+            <textarea 
+                id="txtComments" 
+                rows="4" 
+                cols="40" 
+                maxlength="100" 
+                onkeyup="VerifyComments()"
+                placeholder="Write your comments here..."
+            ></textarea>
+        </dd>
+        <dd id="lblComments"></dd>
+    </dl>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Font Styler</title>
+
+    <script>
+        function ApplyClick() {
+            var color = document.getElementById("txtColor").value;
+            var size = document.getElementById("txtSize").value;
+
+            document.querySelector("p").innerHTML = "SAMPLE TEXT"
+                .fontcolor(color)
+                .fontsize(size);
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        dl {
+            margin-bottom: 20px;
+        }
+
+        dt {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        dd {
+            margin: 0 0 10px 0;
+        }
+
+        input[type="color"],
+        input[type="range"] {
+            margin-top: 5px;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #004999;
+        }
+
+        p {
+            margin-top: 30px;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Font Customizer</h1>
+
+    <dl>
+        <dt>Font Color</dt>
+        <dd>
+            <input 
+                type="color"id="txtColor"onchange="ApplyClick()"
+            >
+        </dd>
+
+        <dt>Font Size</dt>
+        <dd>
+            <input 
+                type="range" id="txtSize" min="1" max="7" value="1" onchange="ApplyClick()"
+            >
+        </dd>
+    </dl>
+
+    <button onclick="ApplyClick()">Apply</button>
+
+    <p>SAMPLE TEXT</p>
+</body>
+</html>

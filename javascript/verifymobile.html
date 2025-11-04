@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        var regExp = / /;
+        var title = "";
+
+        function CountryChange() {
+            var countryName = document.getElementById("lstCountries").value;
+            var imgFlag = document.getElementById("imgFlag");
+            var txtMobile = document.getElementById("txtMobile");
+
+            if (countryName == "India") {
+                regExp = /\+91\d{10}/;
+                title = `eg: +91 and 10 digits`;
+                txtMobile.placeholder = title;
+                imgFlag.src = "../public/images/india.jpg";
+            } 
+            else if (countryName == "US") {
+                regExp = /\+\(1\)\(\d{3}\)\s\d{3}-\d{4}/;
+                title = `eg: +(1)(425) 555-0100`;
+                txtMobile.placeholder = title;
+                imgFlag.src = "../public/images/australia.jpg";
+            } 
+            else if (countryName == "UK") {
+                regExp = /\+\(44\)\(\d{2}\)\s\d{4}\s\d{4}/;
+                title = `eg: +(44)(20) 1234 5678`;
+                txtMobile.placeholder = title;
+                imgFlag.src = "../public/images/england.jpg";
+            } 
+            else {
+                regExp = / /;
+                title = 'Please Select a Country';
+                txtMobile.placeholder = title;
+                imgFlag.src = '';
+            }
+        }
+
+        function VerifyMobile() {
+            var mobile = document.getElementById("txtMobile").value;
+            var lblError = document.getElementById("lblError");
+
+            if (mobile.match(regExp)) {
+                document.write("<h1>Mobile Verified Successfully...</h1>");
+            } else {
+                lblError.innerHTML = `Invalid Mobile ${title}`.fontsize(2);
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <h3>Verify Mobile</h3>
+    <dl class="w-25">
+        <dt>Your Country</dt>
+        <dd class="input-group">
+            <select onchange="CountryChange()" class="form-select" id="lstCountries">
+                <option>Select Country</option>
+                <option>India</option>
+                <option>US</option>
+                <option>UK</option>
+            </select>
+            <img class="input-group-text" id="imgFlag" width="60" height="40">
+        </dd>
+
+        <dt>Your Mobile Number</dt>
+        <dd><input type="text" id="txtMobile" class="form-control"></dd>
+        <dd id="lblError" class="text-danger"></dd>
+
+        <div>
+            <button onclick="VerifyMobile()" class="btn btn-warning w-100">Verify</button>
+        </div>
+    </dl>
+</body>
+</html>

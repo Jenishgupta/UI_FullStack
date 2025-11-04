@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function VerifyPassword() {
+            var meter = document.querySelector("meter");
+            var password = document.getElementById("txtPwd").value;
+            var lblPwd = document.getElementById("lblPwd");
+            var regExp = /(?=.*[A-Z])\w{4,15}/;
+
+            if (password.length == 0) {
+                lblPwd.innerHTML = "Password Required".fontcolor('red');
+                meter.value = 0;
+            } else {
+                if (password.match(regExp)) {
+                    lblPwd.innerHTML = "Strong Password".fontcolor('green');
+                    meter.value = 100;
+                } else {
+                    if (password.length < 4) {
+                        lblPwd.innerHTML = "Poor Password".fontcolor('red');
+                        meter.value = 30;
+                    } else {
+                        lblPwd.innerHTML = "Weak Password".fontcolor('goldenrod');
+                        meter.value = 70;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <dl class="mt-4 w-25">
+        <dt>Password</dt>
+        <dd>
+            <input type="password" onkeyup="VerifyPassword()" id="txtPwd" class="form-control">
+        </dd>
+        <dd>
+            <meter min="1" max="100" style="width: 100%; height:30px"></meter>
+        </dd>
+        <dd id="lblPwd"></dd>
+    </dl>
+</body>
+</html>

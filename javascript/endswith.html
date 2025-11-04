@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function VerifyCard() {
+            var card = document.getElementById("txtCard").value;
+            var cardImg = document.getElementById("imgCard");
+
+            if (card.startsWith("4455")) {
+                cardImg.src = "../public/images/visa.png";
+            } else {
+                cardImg.src = "../public/images/mastercard.png";
+            }
+        }
+
+        function VerifyEmail() {
+            var email = document.getElementById("txtEmail").value;
+            var lblEmail = document.getElementById("lblEmail");
+
+            if (email.endsWith("gmail.com")) {
+                lblEmail.innerHTML = "";
+            } else {
+                lblEmail.innerHTML = "Invalid Gmail Account".fontcolor('red').fontsize(2);
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <dl class="w-25 mt-3">
+        <dt>Card Number</dt>
+        <dd class="input-group">
+            <input type="text" onblur="VerifyCard()" maxlength="16" id="txtCard" class="form-control">
+            <img height="40" width="70" class="input-group-text" id="imgCard">
+        </dd>
+
+        <dt>Your Gmail Account</dt>
+        <dd>
+            <input type="text" id="txtEmail" class="form-control" onblur="VerifyEmail()">
+        </dd>
+        <dd id="lblEmail"></dd>
+    </dl>
+</body>
+</html>

@@ -17,18 +17,8 @@
 </head>
 <body class="container-fluid">
 
-    <!-- Booking Button -->
-    <div id="buttonContainer" class="mt-3">
-        <button 
-            class="btn btn-primary" 
-            data-bs-toggle="modal" 
-            data-bs-target="#booking">
-            Quick Booking
-        </button>
-    </div>
-
     <!-- Booking Modal -->
-    <div class="modal fade" id="booking" tabindex="-1">
+    <div class="modal fade show" id="booking" tabindex="-1" style="display: block;">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
 
@@ -38,50 +28,166 @@
                 </div>
 
                 <div class="modal-body">
-                    <div class="d-flex p-2 justify-content-between flex-wrap gap-2">
+                    <!-- Step Navigation -->
+                    <ul class="nav nav-tabs" id="bookingTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="selection-tab" data-bs-toggle="tab" data-bs-target="#selection" type="button" role="tab">Selection</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="seats-tab" data-bs-toggle="tab" data-bs-target="#seats" type="button" role="tab" disabled>Seats</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="details-tab" data-bs-toggle="tab" data-bs-target="#details" type="button" role="tab" disabled>Details</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="payment-tab" data-bs-toggle="tab" data-bs-target="#payment" type="button" role="tab" disabled>Payment</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="confirmation-tab" data-bs-toggle="tab" data-bs-target="#confirmation" type="button" role="tab" disabled>Confirmation</button>
+                        </li>
+                    </ul>
 
-                        <div>
-                            <select id="lstMovies" class="form-select">
-                                <option>Select Movie</option>
-                                <option>THAMMA</option>
-                                <option>JOLLY LLB3</option>
-                            </select>
+                    <!-- Tab Content -->
+                    <div class="tab-content mt-3" id="bookingTabContent">
+                        <!-- Selection Tab -->
+                        <div class="tab-pane fade show active" id="selection" role="tabpanel">
+                            <div class="d-flex p-2 justify-content-between flex-wrap gap-2">
+                                <div>
+                                    <label for="lstMovies" class="form-label">Movie</label>
+                                    <select id="lstMovies" class="form-select">
+                                        <option>Select Movie</option>
+                                        <option>Azaad</option>
+                                        <option>Deva</option>
+                                        <option>Mirai</option>
+                                        <option>They Call Him OG</option>
+                                        <option>Jolly LLB 3</option>
+                                        <option>Lokah Chapter One: Chandra</option>
+                                        <option>Dhoom Dhaam</option>
+                                        <option>Agnyathavasi</option>
+                                        <option>HIT: The Third Case</option>
+                                        <option>Chhaava</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="lstDate" class="form-label">Date</label>
+                                    <select id="lstDate" class="form-select">
+                                        <option>Select Date</option>
+                                        <option>Today, 31 OCT</option>
+                                        <option>Today, 1 NOV</option>
+                                        <option>Today, 2 NOV</option>
+                                        <option>Today, 3 NOV</option>
+                                        <option>Today, 4 NOV</option>
+                                        <option>Tomorrow, 5 NOV</option>
+                                        <option>Wednesday, 6 NOV</option>
+                                        <option>Thursday, 7 NOV</option>
+                                        <option>Friday, 8 NOV</option>
+                                        <option>Saturday, 9 NOV</option>
+                                        <option>Sunday, 10 NOV</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="lstCinema" class="form-label">Cinema</label>
+                                    <select id="lstCinema" class="form-select">
+                                        <option>Select Cinema</option>
+                                        <option>AMB Cinemas - Gachibowli</option>
+                                        <option>PVR - Panjagutta</option>
+                                        <option>INOX - GVK One, Banjara Hills</option>
+                                        <option>Asian CineSquare - Uppal</option>
+                                        <option>Miraj Cinemas - Kothapet</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="lstTiming" class="form-label">Timing</label>
+                                    <select id="lstTiming" class="form-select">
+                                        <option>Select Timing</option>
+                                        <option>10:30 AM</option>
+                                        <option>12:45 PM</option>
+                                        <option>03:00 PM</option>
+                                        <option>04:15 PM</option>
+                                        <option>06:30 PM</option>
+                                        <option>07:45 PM</option>
+                                        <option>09:00 PM</option>
+                                        <option>10:10 PM</option>
+                                        <option>10:40 PM</option>
+                                        <option>11:15 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="text-end mt-3">
+                                <button id="btnNextSeats" class="btn btn-primary" onclick="nextToSeats()">Next: Select Seats</button>
+                            </div>
                         </div>
 
-                        <div>
-                            <select id="lstDate" class="form-select">
-                                <option>Select Date</option>
-                                <option>Today, 27 OCT</option>
-                                <option>Tomorrow, 28 OCT</option>
-                            </select>
+                        <!-- Seats Tab -->
+                        <div class="tab-pane fade" id="seats" role="tabpanel">
+                            <h5>Select Seats (Max 10)</h5>
+                            <div id="seatGrid" class="d-flex flex-column align-items-center">
+                                <!-- Seat grid will be generated here -->
+                            </div>
+                            <div class="text-end mt-3">
+                                <button class="btn btn-secondary me-2" onclick="backToSelection()">Back</button>
+                                <button id="btnNextDetails" class="btn btn-primary" onclick="nextToDetails()">Next: Enter Details</button>
+                            </div>
                         </div>
 
-                        <div>
-                            <select id="lstCinema" class="form-select">
-                                <option>Select Cinema</option>
-                                <option>PVR - Ameerpet</option>
-                                <option>INOX - B'hills</option>
-                            </select>
+                        <!-- Details Tab -->
+                        <div class="tab-pane fade" id="details" role="tabpanel">
+                            <h5>Enter Your Details</h5>
+                            <form id="userForm">
+                                <div class="mb-3">
+                                    <label for="userName" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="userName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="userEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="userEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="userPhone" class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" id="userPhone" required>
+                                </div>
+                            </form>
+                            <div class="text-end mt-3">
+                                <button class="btn btn-secondary me-2" onclick="backToSeats()">Back</button>
+                                <button id="btnNextPayment" class="btn btn-primary" onclick="nextToPayment()">Next: Payment</button>
+                            </div>
                         </div>
 
-                        <div>
-                            <select id="lstTiming" class="form-select">
-                                <option>Select Timing</option>
-                                <option>10:30 AM</option>
-                                <option>10:40 PM</option>
-                            </select>
+                        <!-- Payment Tab -->
+                        <div class="tab-pane fade" id="payment" role="tabpanel">
+                            <h5>Payment Details</h5>
+                            <form id="paymentForm">
+                                <div class="mb-3">
+                                    <label for="cardNumber" class="form-label">Card Number</label>
+                                    <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="expiryDate" class="form-label">Expiry Date</label>
+                                        <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="cvv" class="form-label">CVV</label>
+                                        <input type="text" class="form-control" id="cvv" placeholder="123" required>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="text-end mt-3">
+                                <button class="btn btn-secondary me-2" onclick="backToDetails()">Back</button>
+                                <button id="btnConfirm" class="btn btn-success" onclick="confirmBooking()">Confirm Booking</button>
+                            </div>
                         </div>
 
-                        <div>
-                            <button 
-                                id="btnBook" 
-                                class="btn btn-primary" 
-                                data-bs-dismiss="modal"
-                                onclick="BookClick()">
-                                Book
-                            </button>
+                        <!-- Confirmation Tab -->
+                        <div class="tab-pane fade" id="confirmation" role="tabpanel">
+                            <h5>Booking Confirmed!</h5>
+                            <div id="confirmationDetails">
+                                <!-- Confirmation details will be shown here -->
+                            </div>
+                            <div class="text-end mt-3">
+                                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="finishBooking()">Done</button>
+                            </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -105,6 +211,21 @@
 
             <dt class="col-3">Timing</dt>
             <dd class="col-9" id="lblTiming"></dd>
+
+            <dt class="col-3">Seats</dt>
+            <dd class="col-9" id="lblSeats"></dd>
+
+            <dt class="col-3">Name</dt>
+            <dd class="col-9" id="lblName"></dd>
+
+            <dt class="col-3">Email</dt>
+            <dd class="col-9" id="lblEmail"></dd>
+
+            <dt class="col-3">Phone</dt>
+            <dd class="col-9" id="lblPhone"></dd>
+
+            <dt class="col-3">Booking ID</dt>
+            <dd class="col-9" id="lblBookingID"></dd>
         </dl>
 
         <button 
