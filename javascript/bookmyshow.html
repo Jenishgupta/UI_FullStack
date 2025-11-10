@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book My Show</title>
+
+    <!-- Bootstrap Icons & CSS -->
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+    <!-- Custom Script -->
+    <script src="../src/scripts/bookmyshow.js"></script>
+</head>
+<body class="container-fluid" onload="LoadMovies()">
+    <div class="w-50 mx-auto mt-4">
+        <div class="fs-2 fw-bold bi bi-ticket-detailed"> Book My Show - Admin Dashboard</div>
+
+        <div class="w-100 mt-4">
+            <!-- Add Movie Section -->
+            <div class="input-group">
+                <input type="text" id="txtMovie" placeholder="New movie name" class="form-control">
+                <button onclick="AddClick()" class="btn btn-primary bi bi-film"> Add </button>
+            </div>
+
+            <!-- Sort Buttons -->
+            <div class="my-4">
+                <button onclick="SortAsc()" class="btn btn-success bi bi-sort-alpha-down"></button>
+                <button onclick="SortDesc()" class="btn btn-success bi bi-sort-alpha-up mx-2"></button>
+            </div>
+
+            <!-- Movie List -->
+            <div class="mt-2">
+                <select id="lstMovies" class="form-select" size="4"></select>
+            </div>
+
+            <!-- Movie Count -->
+            <div class="my-2">
+                <label id="lblCount" class="fw-bold"></label>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="my-2">
+                <button onclick="EditClick()" data-bs-target="#edit" data-bs-toggle="modal" class="btn btn-warning bi bi-pen-fill"> Edit</button>
+
+                <!-- Edit Modal -->
+                <div class="modal fade" id="edit">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>Edit Movie</h3>
+                            </div>
+                            <div class="modal-body">
+                                <input type="text" class="form-control" id="txtEditMovie">
+                            </div>
+                            <div class="modal-footer">
+                                <button onclick="SaveClick()" class="btn btn-success" data-bs-dismiss="modal">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="DeleteClick()" class="btn btn-danger bi bi-trash-fill"> Delete</button>
+                <button onclick="ClearClick()" class="btn btn-outline-danger bi bi-trash"> Clear All</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
