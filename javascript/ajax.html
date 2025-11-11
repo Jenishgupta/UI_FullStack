@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        pre {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            height: 100px;
+            width: 80%;
+        }
+    </style>
+
+    <script>
+        function handleLoadClick() {
+            let http = new XMLHttpRequest();
+            http.open("get", "../data/help.txt", true);
+            http.send();
+
+            http.onreadystatechange = function() {
+                if (http.readyState === 4 && http.status === 200) {
+                    document.querySelector("pre").textContent = http.responseText;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="handleLoadClick()">Load Help</button>
+    <br><br>
+
+    <div>
+        <pre></pre>
+    </div>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis id aut illum omnis animi, dolorem modi quae quis at.
+        Quia ducimus dolore dolores excepturi nostrum doloremque, ullam modi neque accusantium. Lorem ipsum dolor sit, amet
+        consectetur adipisicing elit. Nostrum distinctio suscipit aperiam eum corrupti enim cum, rerum sint nesciunt inventore
+        eveniet, dolor blanditiis earum. Quisquam, eos! Expedita eligendi praesentium consequuntur?
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis id aut illum omnis animi, dolorem modi quae quis at.
+        Quia ducimus dolore dolores excepturi nostrum doloremque, ullam modi neque accusantium. Lorem ipsum dolor sit, amet
+        consectetur adipisicing elit. Nostrum distinctio suscipit aperiam eum corrupti enim cum, rerum sint nesciunt inventore
+        eveniet, dolor blanditiis earum. Quisquam, eos! Expedita eligendi praesentium consequuntur?
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis id aut illum omnis animi, dolorem modi quae quis at.
+        Quia ducimus dolore dolores excepturi nostrum doloremque, ullam modi neque accusantium. Lorem ipsum dolor sit, amet
+        consectetur adipisicing elit. Nostrum distinctio suscipit aperiam eum corrupti enim cum, rerum sint nesciunt inventore
+        eveniet, dolor blanditiis earum. Quisquam, eos! Expedita eligendi praesentium consequuntur?
+    </p>
+</body>
+</html>
