@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        let product = {
+            title: '',
+            price: 0,
+            image: '',
+            rating: { rate: 0, ratings: 0, reviews: 0 },
+            offers: []
+        };
+
+        function bodyload() {
+            fetch('../data/product.json')
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
+                    product = data;
+
+                    document.getElementById("imgProduct").src = product.image;
+                    document.getElementById("lblTitle").textContent = product.title;
+
+                    document.getElementById("lblRatings").innerHTML = `
+                        <span class="badge text-white bg-success p-2 rounded">
+                            ${product.rating.rate} <span class="bi bi-star-fill"></span>
+                        </span>
+                        <span class="text-secondary fw-bold mx-2">
+                            ${product.rating.ratings.toLocaleString('en-in')} ratings &
+                            ${product.rating.reviews.toLocaleString('en-in')} reviews
+                        </span>
+                    `;
+
+                    document.getElementById("lblPrice").textContent =
+                        product.price.toLocaleString('en-in', {
+                            style: "currency",
+                            currency: "INR",
+                            minimumFractionDigits: 0
+                        });
+
+                    product.offers.map(function(offer) {
+                        var li = document.createElement("li");
+                        li.className = "bi bi-tag-fill text-success my-3";
+                        li.innerHTML = `<span class="text-secondary"> ${offer} </span>`;
+                        document.getElementById("lstOffers").appendChild(li);
+                    });
+                });
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <div class="row mt-4">
+        <div class="col-3">
+            <img width="100%" id="imgProduct">
+        </div>
+        <div class="col-9">
+            <div id="lblTitle" class="fs-4"></div>
+            <div id="lblRatings" class="my-2"></div>
+            <div class="my-2">
+                <span id="lblPrice" class="fs-1 fw-bold"></span>
+            </div>
+            <div class="my-2">
+                <div class="h5">Available Offers</div>
+                <ul class="list-unstyled" id="lstOffers"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

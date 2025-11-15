@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Cards</title>
+
+  <!-- Bootstrap & Icons -->
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+  <script>
+    function bodyload() {
+      fetch('../data/product2.json')
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (products) {
+          products.map(function (product) {
+            var div = document.createElement('div');
+            div.className = "card m-2 p-2 shadow-sm";
+            div.style.width = "220px";
+            div.innerHTML = `
+              <div class="card-header p-0 bg-white border-0">
+                <img src="${product.image}" height="200" class="card-img-top" alt="${product.title}">
+              </div>
+              <div class="card-body text-center">
+                <div class="fw-semibold">${product.title}</div>
+                <div class="fs-5 fw-bold text-success mt-2">
+                  ${product.price.toLocaleString('en-IN', {
+                    style: "currency",
+                    currency: "INR",
+                    minimumFractionDigits: 0
+                  })}
+                </div>
+              </div>
+              <div class="card-footer bg-white border-0">
+                <button class="btn btn-warning w-100 bi bi-cart4"> Add to Cart </button>
+              </div>
+            `;
+            document.querySelector('main').appendChild(div);
+          });
+        });
+    }
+  </script>
+</head>
+
+<body class="container-fluid" onload="bodyload()">
+  <h2 class="text-center mt-3 mb-4">📱 Apple iPhone 16 Collection</h2>
+
+  <main class="d-flex flex-wrap justify-content-center">
+    <!-- Product cards will be inserted here -->
+  </main>
+</body>
+</html>

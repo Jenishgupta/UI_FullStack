@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Apple iPhone 16 (266 GB)",
+    "price": 79900,
+    "rating": { "rate": 4.9, "ratings": 142456, "reviews": 5324 },
+    "image": "../public/images/iphone16.jpg",
+    "offers": [
+      "Bank Offer 5% cashback on Axis Bank Flipkart Debit Card up to ₹750 T&C",
+      "Bank Offer 5% cashback on Flipkart SBI Credit Card upto ₹4,000 per calendar quarter T&C",
+      "Bank Offer 5% cashback on Flipkart Axis Bank Credit Card upto ₹4,000 per statement quarter T&C",
+      "Bank Offer Up To ₹50 Instant Cashback on BHIM Payments App. Min Order Value ₹199. Offer Valid Once Per User T&C"
+    ]
+  },
+  {
+    "title": "Apple iPhone 16 (128 GB)",
+    "price": 69900,
+    "rating": { "rate": 4.5, "ratings": 15456, "reviews": 324 },
+    "image": "../public/images/iphone16.jpg",
+    "offers": [
+      "Bank Offer 5% cashback on Axis Bank Flipkart Debit Card up to ₹750 T&C",
+      "Bank Offer 5% cashback on Flipkart SBI Credit Card upto ₹4,000 per calendar quarter T&C",
+      "Bank Offer 5% cashback on Flipkart Axis Bank Credit Card upto ₹4,000 per statement quarter T&C",
+      "Bank Offer Up To ₹50 Instant Cashback on BHIM Payments App. Min Order Value ₹199. Offer Valid Once Per User T&C"
+    ]
+  },
+  {
+    "title": "Apple iPhone 16 (128 GB)",
+    "price": 69900,
+    "rating": { "rate": 4.8, "ratings": 136456, "reviews": 4324 },
+    "image": "../public/images/iphone16.jpg",
+    "offers": [
+      "Bank Offer 5% cashback on Axis Bank Flipkart Debit Card up to ₹750 T&C",
+      "Bank Offer 5% cashback on Flipkart SBI Credit Card upto ₹4,000 per calendar quarter T&C",
+      "Bank Offer 5% cashback on Flipkart Axis Bank Credit Card upto ₹4,000 per statement quarter T&C",
+      "Bank Offer Up To ₹50 Instant Cashback on BHIM Payments App. Min Order Value ₹199. Offer Valid Once Per User T&C"
+    ]
+  }
+]

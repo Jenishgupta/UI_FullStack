@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Table</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+  <script>
+    function bodyload() {
+      fetch('../data/product2.json')
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          data.map(function (product) {
+            var tr = document.createElement("tr");
+
+            var tdTitle = document.createElement("td");
+            var tdImage = document.createElement("td");
+            var tdPrice = document.createElement("td");
+            var tdRating = document.createElement("td");
+
+            tdTitle.textContent = product.title;
+            tdImage.innerHTML = `<img width="100" src="${product.image}" alt="${product.title}">`;
+            tdPrice.textContent = product.price.toLocaleString('en-IN', {
+              style: "currency",
+              currency: "INR",
+              minimumFractionDigits: 0
+            });
+
+            tdRating.innerHTML = `
+              <span class="badge text-white bg-success p-2 rounded">
+                ${product.rating.rate} <span class="bi bi-star-fill"></span>
+              </span>
+              <span class="text-secondary fw-bold mx-2">
+                ${product.rating.ratings.toLocaleString('en-IN')} ratings & 
+                ${product.rating.reviews.toLocaleString('en-IN')} reviews
+              </span>
+            `;
+
+            tr.appendChild(tdTitle);
+            tr.appendChild(tdImage);
+            tr.appendChild(tdPrice);
+            tr.appendChild(tdRating);
+
+            document.getElementById("tblProductsBody").appendChild(tr);
+          });
+        });
+    }
+  </script>
+</head>
+<body class="container-fluid p-4" onload="bodyload()">
+  <h2 class="text-center mb-4">📱 Apple iPhone 16 Series</h2>
+  <table class="table table-hover align-middle">
+    <thead class="table-dark">
+      <tr>
+        <th>Title</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody id="tblProductsBody"></tbody>
+  </table>
+</body>
+</html>
