@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Showcase</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        /* Optional hover animation */
+        .product-card:hover {
+            transform: translateY(-5px);
+            transition: 0.3s ease;
+        }
+
+        /* Ribbon Badge */
+        .ribbon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+<!-- =====================
+     NAVBAR
+====================== -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">ShopEase</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <form class="d-flex ms-auto">
+                <input class="form-control me-2" type="search" placeholder="Search products">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!-- =====================
+     CAROUSEL
+====================== -->
+<div id="productCarousel" class="carousel slide mt-3" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2"></button>
+    </div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../public/images/slide-1.png" class="d-block w-100" alt="Product 1">
+        </div>
+        <div class="carousel-item">
+            <img src="../public/images/slide-2.png" class="d-block w-100" alt="Product 2">
+        </div>
+        <div class="carousel-item">
+            <img src="../public/images/slide-3.png" class="d-block w-100" alt="Product 3">
+        </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+<!-- =====================
+     PRODUCT GRID
+====================== -->
+<div class="container mt-5">
+    <div class="row g-4">
+
+        <!-- PRODUCT CARD (Repeatable) -->
+        <div class="col-md-4">
+            <div class="card product-card position-relative shadow-sm">
+                <span class="badge bg-danger ribbon">Hot</span>
+                <img src="../public/images/AppleAirPodsheadphone.jpg" class="card-img-top" alt="Product">
+                <div class="card-body">
+                    <h5 class="card-title">Smart Headphones</h5>
+                    <p class="text-muted">₹59,900</p>
+                    <button class="btn btn-primary w-100" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#buyModal"
+                        data-product="Smart Headphones">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card product-card position-relative shadow-sm">
+                <span class="badge bg-success ribbon">New</span>
+                <img src="../public/images/MarshallSpeaker.jpg" class="card-img-top" alt="Product">
+                <div class="card-body">
+                    <h5 class="card-title">Wireless Speaker</h5>
+                    <p class="text-muted">₹54,900</p>
+                    <button class="btn btn-primary w-100"
+                        data-bs-toggle="modal" 
+                        data-bs-target="#buyModal"
+                        data-product="Wireless Speaker">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card product-card position-relative shadow-sm">
+                <span class="badge bg-primary ribbon">Sale</span>
+                <img src="../public/images/Applesmartwatch.jpg" class="card-img-top" alt="Product">
+                <div class="card-body">
+                    <h5 class="card-title">Smart Watch</h5>
+                    <p class="text-muted">₹84,900</p>
+                    <button class="btn btn-primary w-100"
+                        data-bs-toggle="modal" 
+                        data-bs-target="#buyModal"
+                        data-product="Smart Watch">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- =====================
+     MODAL
+====================== -->
+<div class="modal fade" id="buyModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalProductName">Product Name</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to purchase this item?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button class="btn btn-success">Confirm Purchase</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Handle dynamic product name in modal
+    const buyModal = document.getElementById('buyModal');
+    buyModal.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
+        const productName = button.getAttribute('data-product');
+        document.getElementById('modalProductName').textContent = productName;
+    });
+</script>
+
+<!-- =====================
+     FOOTER
+====================== -->
+<footer class="bg-dark text-light mt-5 pt-4 pb-2">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4">
+                <h5>About</h5>
+                <p>We provide high-quality tech products at affordable prices.</p>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Support</h5>
+                <p>FAQ<br>Shipping<br>Returns</p>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Contact</h5>
+                <p>Email: support@shopease.com</p>
+                <i class="bi bi-facebook me-3"></i>
+                <i class="bi bi-instagram me-3"></i>
+                <i class="bi bi-twitter"></i>
+            </div>
+
+        </div>
+        <p class="text-center mt-3 mb-0">&copy; 2025 ShopEase</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumitra Creation - Product Details</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .product-image {
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+        .product-price {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        .original-price {
+            text-decoration: line-through;
+            color: #6c757d;
+            font-size: 1.5rem;
+        }
+        .rating-stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+        }
+        .offer-badge {
+            background-color: #28a745;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .quantity-input {
+            width: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-flower1 text-warning"></i> Sumitra Creation
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Sarees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-search"></i> Search
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">
+                            <i class="bi bi-cart"></i> Cart <span class="badge bg-warning" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="bg-light py-2">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="products.html">Sarees</a></li>
+                <li class="breadcrumb-item active" aria-current="page" id="breadcrumbTitle">Product Details</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row" id="productDetails">
+            <!-- Product details will be loaded here -->
+        </div>
+
+        <!-- Related Products -->
+        <div class="mt-5">
+            <h3 class="mb-4">Related Products</h3>
+            <div class="row" id="relatedProducts">
+                <!-- Related products will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Sumitra Creation</h5>
+                    <p>Your trusted destination for premium sarees since 1995.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">Contact</a></li>
+                        <li><a href="#" class="text-white">Shipping Policy</a></li>
+                        <li><a href="#" class="text-white">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <p><i class="bi bi-telephone"></i> +91 9876543210</p>
+                    <p><i class="bi bi-envelope"></i> info@sumitracreation.com</p>
+                    <p><i class="bi bi-geo-alt"></i> Mumbai, India</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2024 Sumitra Creation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Get product ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get('id'));
+
+        let currentProduct = null;
+        let allProducts = [];
+
+        // Load product details
+        function loadProductDetails() {
+            fetch('data/sarees.json')
+                .then(response => response.json())
+                .then(products => {
+                    allProducts = products;
+                    currentProduct = products.find(p => p.id === productId);
+
+                    if (currentProduct) {
+                        displayProductDetails(currentProduct);
+                        loadRelatedProducts(products);
+                        document.getElementById('breadcrumbTitle').textContent = currentProduct.title;
+                    } else {
+                        document.getElementById('productDetails').innerHTML = '<div class="col-12"><h3>Product not found</h3></div>';
+                    }
+                })
+                .catch(error => console.error('Error loading product:', error));
+        }
+
+        // Display product details
+        function displayProductDetails(product) {
+            const productDetails = document.getElementById('productDetails');
+
+            const offersHtml = product.offers.map(offer => `<span class="offer-badge">${offer}</span>`).join(' ');
+
+            const productHtml = `
+                <div class="col-md-6 mb-4">
+                    <img src="${product.image}" class="img-fluid product-image w-100" alt="${product.title}">
+                </div>
+                <div class="col-md-6">
+                    <h1 class="mb-3">${product.title}</h1>
+
+                    <div class="mb-3">
+                        <span class="rating-stars">
+                            ${'★'.repeat(Math.floor(product.rating.rate))}${'☆'.repeat(5 - Math.floor(product.rating.rate))}
+                        </span>
+                        <span class="ms-2">${product.rating.rate} (${product.rating.ratings} ratings & ${product.rating.reviews} reviews)</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <span class="product-price">₹${product.price.toLocaleString()}</span>
+                        <span class="original-price ms-3">₹${product.originalPrice.toLocaleString()}</span>
+                        <span class="badge bg-success ms-3">${Math.round((1 - product.price/product.originalPrice) * 100)}% OFF</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <h5>Product Details:</h5>
+                        <ul class="list-unstyled">
+                            <li><strong>Material:</strong> ${product.material}</li>
+                            <li><strong>Color:</strong> ${product.color}</li>
+                            <li><strong>Occasion:</strong> ${product.occasion}</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5>Description:</h5>
+                        <p>${product.description}</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5>Available Offers:</h5>
+                        <div>${offersHtml}</div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="row g-3 align-items-center">
+                            <div class="col-auto">
+                                <label for="quantity" class="col-form-label">Quantity:</label>
+                            </div>
+                            <div class="col-auto">
+                                <div class="input-group">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="changeQuantity(-1)">-</button>
+                                    <input type="number" class="form-control quantity-input" id="quantity" value="1" min="1" max="10">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="changeQuantity(1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex">
+                        <button class="btn btn-success btn-lg me-md-2" onclick="addToCart()">
+                            <i class="bi bi-cart-plus"></i> Add to Cart
+                        </button>
+                        <button class="btn btn-warning btn-lg" onclick="buyNow()">
+                            <i class="bi bi-lightning"></i> Buy Now
+                        </button>
+                    </div>
+
+                    <div class="mt-4">
+                        <small class="text-muted">
+                            <i class="bi bi-truck"></i> Free shipping on orders above ₹2000<br>
+                            <i class="bi bi-arrow-clockwise"></i> 30-day return policy<br>
+                            <i class="bi bi-shield-check"></i> Secure payment
+                        </small>
+                    </div>
+                </div>
+            `;
+
+            productDetails.innerHTML = productHtml;
+        }
+
+        // Load related products
+        function loadRelatedProducts(products) {
+            const relatedProducts = products
+                .filter(p => p.id !== currentProduct.id && p.material === currentProduct.material)
+                .slice(0, 4);
+
+            const relatedContainer = document.getElementById('relatedProducts');
+
+            if (relatedProducts.length === 0) {
+                relatedContainer.innerHTML = '<div class="col-12"><p>No related products found.</p></div>';
+                return;
+            }
+
+            relatedProducts.forEach(product => {
+                const productCard = `
+                    <div class="col-md-3 mb-4">
+                        <div class="card h-100">
+                            <img src="${product.image}" class="card-img-top" alt="${product.title}" style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h6 class="card-title">${product.title}</h6>
+                                <div class="mb-2">
+                                    <span class="text-success fw-bold">₹${product.price.toLocaleString()}</span>
+                                    <span class="text-decoration-line-through text-muted ms-2">₹${product.originalPrice.toLocaleString()}</span>
+                                </div>
+                                <a href="product-detail.html?id=${product.id}" class="btn btn-outline-primary btn-sm">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                relatedContainer.innerHTML += productCard;
+            });
+        }
+
+        // Quantity functions
+        function changeQuantity(change) {
+            const quantityInput = document.getElementById('quantity');
+            const newValue = parseInt(quantityInput.value) + change;
+            if (newValue >= 1 && newValue <= 10) {
+                quantityInput.value = newValue;
+            }
+        }
+
+        // Add to cart
+        function addToCart() {
+            const quantity = document.getElementById('quantity').value;
+            const cartCount = document.getElementById('cartCount');
+            cartCount.textContent = parseInt(cartCount.textContent) + parseInt(quantity);
+            alert(`${quantity} ${currentProduct.title}(s) added to cart!`);
+        }
+
+        // Buy now
+        function buyNow() {
+            alert('Redirecting to checkout...');
+            // In a real application, this would redirect to checkout page
+        }
+
+        // Load product on page load
+        loadProductDetails();
+    </script>
+</body>
+</html>

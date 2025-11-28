@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumitra Creation - Shopping Cart</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .cart-item {
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: #fff;
+        }
+        .item-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 0.25rem;
+        }
+        .quantity-input {
+            width: 60px;
+            text-align: center;
+        }
+        .price-summary {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .empty-cart {
+            text-align: center;
+            padding: 3rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-flower1 text-warning"></i> Sumitra Creation
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Sarees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-search"></i> Search
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cart.html">
+                            <i class="bi bi-cart"></i> Cart <span class="badge bg-warning" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="bg-light py-2">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h1 class="mb-4">Shopping Cart</h1>
+
+        <div id="cartContent">
+            <!-- Cart items will be loaded here -->
+        </div>
+
+        <div id="priceSummary" class="mt-4" style="display: none;">
+            <div class="row">
+                <div class="col-md-8">
+                    <!-- Cart items summary -->
+                </div>
+                <div class="col-md-4">
+                    <div class="price-summary">
+                        <h4>Price Details</h4>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Price (<span id="itemCount">0</span> items)</span>
+                            <span id="totalPrice">₹0</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Delivery Charges</span>
+                            <span id="deliveryCharges">₹0</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-3">
+                            <strong>Total Amount</strong>
+                            <strong id="finalTotal">₹0</strong>
+                        </div>
+                        <button class="btn btn-success w-100" onclick="proceedToCheckout()">
+                            <i class="bi bi-credit-card"></i> Proceed to Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Sumitra Creation</h5>
+                    <p>Your trusted destination for premium sarees since 2017.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">Contact</a></li>
+                        <li><a href="#" class="text-white">Shipping Policy</a></li>
+                        <li><a href="#" class="text-white">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <p><i class="bi bi-telephone"></i> +91 9876543210</p>
+                    <p><i class="bi bi-envelope"></i> info@sumitracreation.com</p>
+                    <p><i class="bi bi-geo-alt"></i> Bihar, India</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2025 Sumitra Creation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Mock cart data (in a real app, this would come from localStorage or backend)
+        let cartItems = [
+            { id: 1, title: "Traditional Silk Saree", price: 2500, quantity: 1, image: "../public/images/women-fashion.jpg" },
+            { id: 2, title: "Cotton Printed Saree", price: 1200, quantity: 2, image: "../public/images/women-fashion.jpg" }
+        ];
+
+        // Load cart
+        function loadCart() {
+            const cartContent = document.getElementById('cartContent');
+            const priceSummary = document.getElementById('priceSummary');
+            const cartCount = document.getElementById('cartCount');
+
+            if (cartItems.length === 0) {
+                cartContent.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="bi bi-cart-x display-1 mb-3"></i>
+                        <h3>Your cart is empty</h3>
+                        <p>Add some beautiful sarees to your cart</p>
+                        <a href="products.html" class="btn btn-primary">Continue Shopping</a>
+                    </div>
+                `;
+                priceSummary.style.display = 'none';
+                cartCount.textContent = '0';
+                return;
+            }
+
+            cartCount.textContent = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+            let cartHtml = '';
+            let totalPrice = 0;
+            let itemCount = 0;
+
+            cartItems.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                totalPrice += itemTotal;
+                itemCount += item.quantity;
+
+                cartHtml += `
+                    <div class="cart-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-2">
+                                <img src="${item.image}" alt="${item.title}" class="item-image">
+                            </div>
+                            <div class="col-md-4">
+                                <h6>${item.title}</h6>
+                                <p class="text-muted mb-0">₹${item.price.toLocaleString()}</p>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity(${index}, -1)">-</button>
+                                    <input type="number" class="form-control form-control-sm quantity-input" value="${item.quantity}" onchange="updateQuantity(${index}, 0, this.value)">
+                                    <button class="btn btn-outline-secondary btn-sm" onclick="updateQuantity(${index}, 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <strong>₹${itemTotal.toLocaleString()}</strong>
+                            </div>
+                            <div class="col-md-1">
+                                <button class="btn btn-outline-danger btn-sm" onclick="removeItem(${index})">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            cartContent.innerHTML = cartHtml;
+            priceSummary.style.display = 'block';
+
+            // Update price summary
+            document.getElementById('itemCount').textContent = itemCount;
+            document.getElementById('totalPrice').textContent = `₹${totalPrice.toLocaleString()}`;
+
+            const deliveryCharges = totalPrice > 2000 ? 0 : 100;
+            document.getElementById('deliveryCharges').textContent = deliveryCharges === 0 ? 'FREE' : `₹${deliveryCharges}`;
+
+            const finalTotal = totalPrice + deliveryCharges;
+            document.getElementById('finalTotal').textContent = `₹${finalTotal.toLocaleString()}`;
+        }
+
+        // Update quantity
+        function updateQuantity(index, change, newValue = null) {
+            if (newValue !== null) {
+                cartItems[index].quantity = parseInt(newValue);
+            } else {
+                cartItems[index].quantity += change;
+            }
+
+            if (cartItems[index].quantity < 1) {
+                cartItems[index].quantity = 1;
+            }
+
+            loadCart();
+        }
+
+        // Remove item
+        function removeItem(index) {
+            if (confirm('Are you sure you want to remove this item from cart?')) {
+                cartItems.splice(index, 1);
+                loadCart();
+            }
+        }
+
+        // Proceed to checkout
+        function proceedToCheckout() {
+            alert('Redirecting to checkout page...');
+            // In a real application, this would redirect to checkout
+        }
+
+        // Load cart on page load
+        loadCart();
+    </script>
+</body>
+</html>

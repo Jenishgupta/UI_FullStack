@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function Vol1() {
+            document.querySelector("h1").textContent = "Volume Increased by 10%";
+        }
+
+        function Vol2() {
+            document.querySelector("h1").textContent = "Volume Increased by 60%";
+        }
+
+        function Vol3() {
+            document.querySelector("h1").textContent = "Volume Full";
+        }
+
+        var v2;
+        function Increase() {
+            setTimeout(Vol1, 3000);
+            v2 = setTimeout(Vol2, 6000);
+            setTimeout(Vol3, 10000);
+        }
+
+        function Cancel() {
+            clearTimeout(v2);
+        }
+    </script>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <button onclick="Increase()" class="bi bi-volume-up-fill"></button>
+    <button onclick="Cancel()">Cancel Vol2</button>
+    <h1 align="center"></h1>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumitra Creation - Premium Sarees</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .hero-banner {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../public/images/women-fashion.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .featured-card {
+            transition: transform 0.3s;
+        }
+        .featured-card:hover {
+            transform: translateY(-5px);
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .product-price {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .original-price {
+            text-decoration: line-through;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .rating-stars {
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-flower1 text-warning"></i> Sumitra Creation
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Sarees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-search"></i> Search
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">
+                            <i class="bi bi-cart"></i> Cart <span class="badge bg-warning" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="container">
+            <h1 class="hero-title">Welcome to Sumitra Creation</h1>
+            <p class="hero-subtitle">Discover the finest collection of traditional and modern sarees</p>
+            <a href="products.html" class="btn btn-warning btn-lg">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Featured Sarees</h2>
+            <div class="row" id="featuredProducts">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Shop by Category</h2>
+            <div class="row text-center">
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <i class="bi bi-star-fill text-warning fs-1 mb-3"></i>
+                            <h5>Silk Sarees</h5>
+                            <p>Luxurious silk collection</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <i class="bi bi-palette text-primary fs-1 mb-3"></i>
+                            <h5>Cotton Sarees</h5>
+                            <p>Comfortable daily wear</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100">
+                        <i class="bi bi-gem text-danger fs-1 mb-3"></i>
+                        <h5>Designer Sarees</h5>
+                        <p>Exclusive designer pieces</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <i class="bi bi-flower1 text-success fs-1 mb-3"></i>
+                            <h5>Traditional Sarees</h5>
+                            <p>Authentic handwoven sarees</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Sumitra Creation</h5>
+                    <p>Your trusted destination for premium sarees since 2017.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">Contact</a></li>
+                        <li><a href="#" class="text-white">Shipping Policy</a></li>
+                        <li><a href="#" class="text-white">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <p><i class="bi bi-telephone"></i> +91 9876543210</p>
+                    <p><i class="bi bi-envelope"></i> info@sumitracreation.com</p>
+                    <p><i class="bi bi-geo-alt"></i> Biha, India</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2024 Sumitra Creation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Load featured products
+        fetch('data/sarees.json')
+            .then(response => response.json())
+            .then(products => {
+                const featuredContainer = document.getElementById('featuredProducts');
+                const featuredProducts = products.slice(0, 4); // Show first 4 products
+
+                featuredProducts.forEach(product => {
+                    const productCard = `
+                        <div class="col-md-3 mb-4">
+                            <div class="card h-100 featured-card">
+                                <img src="${product.image}" class="card-img-top" alt="${product.title}" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h6 class="card-title">${product.title}</h6>
+                                    <div class="mb-2">
+                                        <span class="product-price">₹${product.price.toLocaleString()}</span>
+                                        <span class="original-price ms-2">₹${product.originalPrice.toLocaleString()}</span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <span class="rating-stars">
+                                            ${'★'.repeat(Math.floor(product.rating.rate))}${'☆'.repeat(5 - Math.floor(product.rating.rate))}
+                                        </span>
+                                        <small class="text-muted">(${product.rating.ratings})</small>
+                                    </div>
+                                    <a href="product-detail.html?id=${product.id}" class="btn btn-outline-primary btn-sm">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    featuredContainer.innerHTML += productCard;
+                });
+            })
+            .catch(error => console.error('Error loading products:', error));
+    </script>
+</body>
+</html>

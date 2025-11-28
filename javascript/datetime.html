@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function bodyload() {
+            var now = new Date();
+            now.setHours(19);  // Force time to 7 PM
+            var hrs = now.getHours();
+            var h1 = document.querySelector("h1");
+
+            if (hrs >= 0 && hrs <= 12) {
+                h1.innerHTML = "Good Morning<br>" +
+                `<div class="tenor-gif-embed" data-postid="12466001323676315735" data-share-method="host" data-aspect-ratio="1.10363" data-width="100%">
+                    <a href="https://tenor.com/view/good-morning-gif-12466001323676315735">Good Morning Sticker</a>
+                    from <a href="https://tenor.com/search/good+morning-stickers">Good Morning Stickers</a>
+                </div>`;
+            } 
+            else if (hrs > 12 && hrs <= 17) {
+                h1.innerHTML = "Good Afternoon";
+            } 
+            else {
+                h1.innerHTML = "Good Evening<br>" +
+                `<div class="tenor-gif-embed" data-postid="12466001323676315735" data-share-method="host" data-aspect-ratio="1.10363" data-width="100%">
+                    <a href="https://tenor.com/view/good-morning-gif-12466001323676315735">Good Morning Sticker</a>
+                    from <a href="https://tenor.com/search/good+morning-stickers">Good Morning Stickers</a>
+                </div>`;
+            }
+        }
+    </script>
+
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+</head>
+
+<body onload="bodyload()">
+    <h1 align="center"></h1>
+</body>
+</html>

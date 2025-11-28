@@ -1,0 +1,320 @@
+[
+  {
+    "id": 1,
+    "title": "Traditional Silk Saree",
+    "price": 2500,
+    "originalPrice": 3000,
+    "rating": { "rate": 4.8, "ratings": 245, "reviews": 45 },
+    "image": "images/saree1.jpg",
+    "description": "Beautiful handwoven silk saree with intricate zari work, perfect for weddings and festivals.",
+    "material": "Silk",
+    "color": "Red",
+    "occasion": "Wedding",
+    "offers": [
+      "Bank Offer: 10% cashback on HDFC Credit Card",
+      "Free shipping on orders above ₹2000",
+      "Exchange offer: Get 20% off on next purchase"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Cotton Printed Saree",
+    "price": 1200,
+    "originalPrice": 1500,
+    "rating": { "rate": 4.5, "ratings": 189, "reviews": 32 },
+    "image": "images/saree3.jpg",
+    "description": "Comfortable cotton saree with modern prints, ideal for daily wear and casual occasions.",
+    "material": "Cotton",
+    "color": "Blue",
+    "occasion": "Casual",
+    "offers": [
+      "Bank Offer: 5% cashback on SBI Credit Card",
+      "Free shipping on orders above ₹1000"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Designer Embroidered Saree",
+    "price": 4500,
+    "originalPrice": 5500,
+    "rating": { "rate": 4.9, "ratings": 156, "reviews": 28 },
+    "image": "images/saree3.jpg",
+    "description": "Luxurious embroidered saree with sequins and mirror work, perfect for special occasions.",
+    "material": "Georgette",
+    "color": "Gold",
+    "occasion": "Party",
+    "offers": [
+      "Bank Offer: 15% cashback on ICICI Credit Card",
+      "Free gift wrapping",
+      "COD available"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Banarasi Silk Saree",
+    "price": 3500,
+    "originalPrice": 4200,
+    "rating": { "rate": 4.7, "ratings": 312, "reviews": 67 },
+    "image": "images/saree1.jpg",
+    "description": "Classic Banarasi saree with traditional motifs, a timeless piece for your collection.",
+    "material": "Silk",
+    "color": "Maroon",
+    "occasion": "Traditional",
+    "offers": [
+      "Bank Offer: 12% cashback on Axis Bank Credit Card",
+      "Free shipping and returns"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Chiffon Saree",
+    "price": 1800,
+    "originalPrice": 2200,
+    "rating": { "rate": 4.6, "ratings": 98, "reviews": 18 },
+    "image": "images/saree3.jpg",
+    "description": "Light and flowy chiffon saree, perfect for summer weddings and evening events.",
+    "material": "Chiffon",
+    "color": "Pink",
+    "occasion": "Wedding",
+    "offers": [
+      "Bank Offer: 8% cashback on Kotak Mahindra Credit Card",
+      "Free alteration service"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Kanchipuram Silk Saree",
+    "price": 5000,
+    "originalPrice": 6000,
+    "rating": { "rate": 4.9, "ratings": 203, "reviews": 41 },
+    "image": "images/saree1.jpg",
+    "description": "Authentic Kanchipuram silk saree with gold zari borders, a symbol of South Indian tradition.",
+    "material": "Silk",
+    "color": "Cream",
+    "occasion": "Ceremony",
+    "offers": [
+      "Bank Offer: 20% cashback on select credit cards",
+      "Authenticity certificate included",
+      "Free maintenance guide"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Linen Printed Saree",
+    "price": 1600,
+    "originalPrice": 2000,
+    "rating": { "rate": 4.4, "ratings": 120, "reviews": 22 },
+    "image": "images/saree3.jpg",
+    "description": "Soft linen saree with elegant printed patterns, great for office and casual outings.",
+    "material": "Linen",
+    "color": "Beige",
+    "occasion": "Office",
+    "offers": [
+      "5% cashback on Paytm Wallet",
+      "Free shipping"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Patola Silk Saree",
+    "price": 6500,
+    "originalPrice": 7800,
+    "rating": { "rate": 4.9, "ratings": 142, "reviews": 30 },
+    "image": "images/saree1.jpg",
+    "description": "Premium Patola saree featuring traditional geometric motifs woven with precision.",
+    "material": "Silk",
+    "color": "Green",
+    "occasion": "Festive",
+    "offers": [
+      "15% cashback on HDFC Debit Card",
+      "Exclusive packaging included"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Net Embellished Saree",
+    "price": 3200,
+    "originalPrice": 3800,
+    "rating": { "rate": 4.6, "ratings": 110, "reviews": 25 },
+    "image": "images/saree3.jpg",
+    "description": "Stylish net saree adorned with heavy embellishments, suitable for receptions and parties.",
+    "material": "Net",
+    "color": "Peach",
+    "occasion": "Party",
+    "offers": [
+      "10% cashback on Axis Bank Cards",
+      "Free blouse stitching"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Tussar Silk Saree",
+    "price": 2700,
+    "originalPrice": 3200,
+    "rating": { "rate": 4.5, "ratings": 165, "reviews": 35 },
+    "image": "images/saree1.jpg",
+    "description": "Elegant tussar silk saree with natural texture and minimalistic embroidery.",
+    "material": "Silk",
+    "color": "Brown",
+    "occasion": "Traditional",
+    "offers": [
+      "5% cashback on SBI Credit Card",
+      "Free shipping"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Bhagalpuri Silk Saree",
+    "price": 2100,
+    "originalPrice": 2600,
+    "rating": { "rate": 4.4, "ratings": 90, "reviews": 17 },
+    "image": "images/saree3.jpg",
+    "description": "Lightweight Bhagalpuri silk saree with beautiful prints.",
+    "material": "Silk Blend",
+    "color": "Purple",
+    "occasion": "Festive",
+    "offers": [
+      "7% cashback on ICICI Cards"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Organza Floral Saree",
+    "price": 2300,
+    "originalPrice": 2800,
+    "rating": { "rate": 4.6, "ratings": 134, "reviews": 24 },
+    "image": "images/saree3.jpg",
+    "description": "Graceful organza saree featuring soft floral prints.",
+    "material": "Organza",
+    "color": "Lavender",
+    "occasion": "Brunch",
+    "offers": [
+      "5% cashback on Amazon Pay",
+      "Free shipping"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Kota Doria Saree",
+    "price": 1500,
+    "originalPrice": 1900,
+    "rating": { "rate": 4.3, "ratings": 85, "reviews": 16 },
+    "image": "images/saree3.jpg",
+    "description": "Light and airy Kota Doria saree suitable for summer wear.",
+    "material": "Cotton Blend",
+    "color": "Yellow",
+    "occasion": "Casual",
+    "offers": [
+      "2% wallet cashback"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Velvet Embroidered Saree",
+    "price": 5200,
+    "originalPrice": 6300,
+    "rating": { "rate": 4.8, "ratings": 97, "reviews": 20 },
+    "image": "images/saree3.jpg",
+    "description": "Heavy velvet saree with elegant embroidery, perfect for winter weddings.",
+    "material": "Velvet",
+    "color": "Wine",
+    "occasion": "Wedding",
+    "offers": [
+      "12% cashback on HDFC Cards",
+      "Free gift box"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Paithani Silk Saree",
+    "price": 7200,
+    "originalPrice": 8500,
+    "rating": { "rate": 4.9, "ratings": 120, "reviews": 26 },
+    "image": "images/saree1.jpg",
+    "description": "Traditional Paithani saree with signature peacock pallu.",
+    "material": "Silk",
+    "color": "Orange",
+    "occasion": "Ceremony",
+    "offers": [
+      "15% cashback on select bank cards",
+      "Free shipping"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Crepe Saree",
+    "price": 1700,
+    "originalPrice": 2100,
+    "rating": { "rate": 4.4, "ratings": 102, "reviews": 19 },
+    "image": "images/saree3.jpg",
+    "description": "Soft crepe saree with smooth texture ideal for office and travel.",
+    "material": "Crepe",
+    "color": "Grey",
+    "occasion": "Office",
+    "offers": [
+      "10% cashback on PhonePe"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Mysore Silk Saree",
+    "price": 4300,
+    "originalPrice": 5100,
+    "rating": { "rate": 4.7, "ratings": 115, "reviews": 22 },
+    "image": "images/saree1.jpg",
+    "description": "Premium Mysore silk saree known for its smooth texture and vibrant sheen.",
+    "material": "Silk",
+    "color": "Royal Blue",
+    "occasion": "Traditional",
+    "offers": [
+      "10% cashback on ICICI Bank",
+      "Free saree cover"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Georgette Printed Saree",
+    "price": 1400,
+    "originalPrice": 1800,
+    "rating": { "rate": 4.3, "ratings": 89, "reviews": 14 },
+    "image": "images/saree3.jpg",
+    "description": "Light georgette saree with modern digital prints.",
+    "material": "Georgette",
+    "color": "Mint Green",
+    "occasion": "Casual",
+    "offers": [
+      "5% cashback on SBI Card"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Brasso Saree",
+    "price": 2600,
+    "originalPrice": 3100,
+    "rating": { "rate": 4.5, "ratings": 95, "reviews": 18 },
+    "image": "images/saree3.jpg",
+    "description": "Trendy brasso saree with unique burn-out patterns.",
+    "material": "Brasso",
+    "color": "Teal",
+    "occasion": "Festive",
+    "offers": [
+      "10% cashback on Paytm Postpaid"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Soft Silk Saree",
+    "price": 3900,
+    "originalPrice": 4600,
+    "rating": { "rate": 4.7, "ratings": 160, "reviews": 28 },
+    "image": "images/saree1.jpg",
+    "description": "Elegant soft silk saree with delicate border designs.",
+    "material": "Silk",
+    "color": "Sky Blue",
+    "occasion": "Festive",
+    "offers": [
+      "12% cashback on HDFC Bank",
+      "Free shipping and COD available"
+    ]
+  }
+]
