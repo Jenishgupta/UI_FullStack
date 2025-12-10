@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Weather Forecast</title>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <!-- Custom CSS for Professional Look -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .weather-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .weather-card:hover {
+            transform: translateY(-5px);
+        }
+        .weather-icon {
+            font-size: 4rem;
+            color: #4a90e2;
+        }
+        .temp-display {
+            font-size: 3rem;
+            font-weight: 300;
+        }
+        .detail-item {
+            background: rgba(74, 144, 226, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        .loading-spinner {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+        .error-message {
+            display: none;
+            background: #ffebee;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 5px solid #c62828;
+        }
+    </style>
+
+    <!-- Weather Script -->
+    <script src="../Weather/weather.js" defer></script>
+
+</head>
+
+<body class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-10">
+                <div class="text-center mb-4">
+                    <h1 class="text-white fw-bold display-4">Weather Forecast</h1>
+                    <p class="text-white-50">Get accurate weather information for any city</p>
+                </div>
+
+                <div class="mb-4">
+                    <div class="input-group">
+                        <input id="txtCity" type="text" class="form-control form-control-lg"
+                            placeholder="Enter city name (e.g., Hyderabad, Delhi, Patna)">
+                        <button onclick="SearchClick()" class="btn btn-primary btn-lg">
+                            <i class="bi bi-search"></i> Search
+                        </button>
+                    </div>
+                </div>
+
+                <div id="loadingSpinner" class="loading-spinner">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+
+                <div id="errorMessage" class="error-message">
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                    <span id="errorText"></span>
+                </div>
+
+                <div id="detailsCard" class="weather-card p-3" style="display:none;">
+                    <div class="card-header bg-transparent border-0 pb-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 id="lblCity" class="mb-0"></h4>
+                            <i class="bi bi-geo-alt-fill text-primary"></i>
+                        </div>
+                        <small class="text-muted">Current Location</small>
+                    </div>
+
+                    <div class="card-body text-center pt-2">
+                        <div class="mb-2">
+                            <i id="weatherIcon" class="bi bi-cloud-sun-fill weather-icon"></i>
+                        </div>
+                        <div class="temp-display mb-1">
+                            <span id="lblTemp"></span>
+                        </div>
+                        <div class="text-muted mb-3">
+                            <span id="lblDescription"></span>
+                        </div>
+
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="detail-item">
+                                    <i class="bi bi-droplet-fill text-info me-1"></i>
+                                    <small class="text-muted d-block">Humidity</small>
+                                    <span id="lblHumidity"></span>%
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="detail-item">
+                                    <i class="bi bi-wind text-success me-1"></i>
+                                    <small class="text-muted d-block">Wind Speed</small>
+                                    <span id="lblWindSpeed"></span> m/s
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="detail-item">
+                                    <i class="bi bi-speedometer2 text-warning me-1"></i>
+                                    <small class="text-muted d-block">Pressure</small>
+                                    <span id="lblPressure"></span> hPa
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="detail-item">
+                                    <i class="bi bi-thermometer-half text-danger me-1"></i>
+                                    <small class="text-muted d-block">Feels Like</small>
+                                    <span id="lblFeelsLike"></span>°C
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
