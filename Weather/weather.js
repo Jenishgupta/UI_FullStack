@@ -1,4 +1,4 @@
-var API_KEY = "0d1239b2e34ddde7d25d5f4c4232eca0";
+var API_KEY = "Api_Key";
 
 function LoadWeatherData() {
     var cityName = document.getElementById("txtCity").value.trim();
